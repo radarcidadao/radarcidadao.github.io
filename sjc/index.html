@@ -141,13 +141,43 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(30px,6vw,42px);lin
 .stt{border-radius:6px;padding:2px 8px;font-weight:700;font-size:12px;background:var(--o-t);color:var(--o)}
 .stt.ok{background:var(--l-t);color:var(--ok)}.stt.no{background:#fdecea;color:var(--bad)}.stt.wait{background:#fff4db;color:#946200}
 
-/* filtros extras da busca */
-.fbar{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-top:12px;padding:10px 14px;background:var(--soft);border-radius:14px;font-size:13px}
+.fbar{display:flex;flex-direction:column;gap:12px;margin-top:12px;padding:14px 16px;background:var(--soft);border-radius:16px;font-size:13.5px}
 .fgrp{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.fgrp b{color:var(--mute);text-transform:uppercase;letter-spacing:.05em;font-size:11.5px;margin-right:2px}
-.fbtn{border:1px solid var(--hair);background:var(--paper);border-radius:999px;padding:4px 10px;font-size:12.5px;font-weight:600;color:var(--ink)}
+.fgrp b{color:var(--mute);text-transform:uppercase;letter-spacing:.05em;font-size:11.5px;margin-right:4px;min-width:74px}
+.fbtn{border:1px solid var(--hair);background:var(--paper);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600;color:var(--ink);min-height:34px;display:inline-flex;align-items:center;gap:5px}
 .fbtn:hover{border-color:var(--ink)}
 .fbtn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.fbtn small{opacity:.75;font-weight:400}
+.adv-det{border-top:1px solid var(--hair);padding-top:10px}
+.adv-det summary{cursor:pointer;font-weight:700;font-size:13.5px;color:var(--b);list-style:none;display:inline-flex;align-items:center;gap:8px;padding:4px 0}
+.adv-det summary::-webkit-details-marker{display:none}
+.adv-body{display:flex;flex-direction:column;gap:12px;margin-top:12px}
+.date-range{display:inline-flex;flex-wrap:wrap;gap:6px;align-items:center}
+.date-range input{font:inherit;font-size:13px;padding:5px 9px;border:1px solid var(--hair);border-radius:10px;background:var(--paper);color:var(--ink)}
+.mchips{display:flex;flex-wrap:wrap;gap:6px;max-height:156px;overflow-y:auto;padding:2px 0}
+.af-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-top:12px;padding:10px 14px;background:#f8fafc;border:1px solid var(--hair);border-radius:14px}
+.af-tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.af-tag{display:inline-flex;align-items:center;gap:6px;background:var(--b-t);color:var(--b);border:1px solid #bfdbfe;border-radius:999px;padding:4px 10px;font-size:12.5px;font-weight:700}
+.af-tag button{border:0;background:none;padding:0 2px;font-weight:800;color:var(--ink);line-height:1}
+.af-acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.abtn{border:1px solid var(--hair);background:var(--paper);border-radius:10px;padding:7px 11px;font-size:12.5px;font-weight:700;color:var(--ink);display:inline-flex;align-items:center;gap:5px}
+.abtn:hover{border-color:var(--ink);background:var(--soft)}
+.abtn.pri{background:var(--ink);color:#fff;border-color:var(--ink)}
+.cov-box{background:var(--soft);border:1px solid var(--hair);border-radius:16px;padding:14px 16px;margin-top:14px;font-size:13.5px;line-height:1.45}
+.cov-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 16px;margin-top:8px}
+.cov-grid div strong{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--mute)}
+.stt.exec-no{background:#f1f5f9;color:#475569;border:1px dashed #cbd5e1}
+.stt.exec-resp{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe}
+.tse-box{border:1px solid var(--hair);border-radius:20px;padding:18px;background:var(--paper);box-shadow:var(--shadow);margin-top:24px}
+.tse-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:12px 0}
+.tse-table-wrap{overflow-x:auto;margin-top:12px}
+.tse-table{width:100%;border-collapse:collapse;font-size:13.5px}
+.tse-table th,.tse-table td{padding:9px 10px;border-bottom:1px solid var(--hair);text-align:left}
+.tse-table th{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--mute);background:var(--soft)}
+.sobre-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.sobre-grid div{background:var(--soft);border-radius:16px;padding:16px;font-size:14px}
+.sobre-grid h3{font-size:14.5px;margin:0 0 6px}
+.sobre-grid p{margin:0;color:var(--mute);line-height:1.45}
 
 /* seção prefeito */
 .pref-hero{background:linear-gradient(135deg,#0f1720 0%,#1e293b 100%);color:#fff;border-radius:24px;padding:22px;box-shadow:var(--shadow);margin-bottom:16px}
@@ -371,7 +401,7 @@ footer p{margin:0 0 6px;max-width:70ch}
   <nav class="city-bar" id="city-bar" aria-label="Selecionar cidade"><span class="cb-lbl">📍 Cidade:</span><div class="cb-list"><a class="cbtn" href="../">🌎 Todas as Cidades (8)</a><a class="cbtn" href="../sp/">São Paulo <small>(55)</small></a><a class="cbtn on" href="./">São José dos Campos <small>(21)</small></a><a class="cbtn" href="../taubate/">Taubaté <small>(19)</small></a><a class="cbtn" href="../caraguatatuba/">Caraguatatuba <small>(15)</small></a><a class="cbtn" href="../jacarei/">Jacareí <small>(13)</small></a><a class="cbtn" href="../pindamonhangaba/">Pindamonhangaba <small>(11)</small></a><a class="cbtn" href="../guaratingueta/">Guaratinguetá <small>(11)</small></a><a class="cbtn" href="../cacapava/">Caçapava <small>(10)</small></a></div></nav>
   <header class="top">
     <div class="mode-bar" id="modo-bar">
-      <div class="live" id="live"><i></i><span id="livet">Ao vivo</span></div>
+      <div class="live" id="live"><i style="background:var(--ok);box-shadow:none;animation:none"></i><span id="livet">Atualização diária</span></div>
       <div class="mode-sw" role="group" aria-label="Modo de exibição">
         <button class="mbtn on" type="button" id="m-simples">⚡ Leitura Rápida (Manchetes)</button>
         <button class="mbtn" type="button" id="m-completo">📊 Versão Completa (Todos os números)</button>
@@ -379,78 +409,140 @@ footer p{margin:0 0 6px;max-width:70ch}
       </div>
     </div>
     <h1><img src="logo.png" alt="Radar São José dos Campos" width="1000" height="380"></h1>
-    <p class="lede"><b>Raio-X de São José dos Campos-SP.</b> O que cada vereador fez desde a posse, contado todo dia.</p>
+    <p class="lede"><b>Raio-X de São José dos Campos-SP.</b> Proposições, votações nominais e dados eleitorais oficiais reunidos em um só lugar.</p>
     <div class="meter">
-      <span class="ml">Salário pago aos 21 vereadores desde a posse</span>
+      <span class="ml">Estimativa calculada de subsídios brutos (21 vereadores desde a posse)</span>
       <b class="mv num" id="tick">R$ 0</b>
-      <span class="ms">e subindo agora · estimativa: 21 salários de R$ 18.992 por mês desde 1º de janeiro de 2025 (Resolução / Lei Municipal fixadora da 19ª Legislatura (2025–2028))</span>
+      <span class="ms">estimativa matemática proporcional: 21 subsídios brutos de R$ 18.992/mês desde 01/01/2025 (Resolução / Lei Municipal fixadora da 19ª Legislatura (2025–2028)) · não representa consulta em tempo real à folha de pagamento.</span>
     </div>
     <div id="aviso-coleta"></div>
     <div class="hero-hl" id="manchetes-topo"></div>
     <div class="stats num" id="stats"></div>
     <p class="upd" id="upd"></p>
+    <div class="cov-box" id="cobertura-box"></div>
   </header>
 
   <section id="sec-bairro" aria-labelledby="h-b">
-    <span class="eye">Comece por aqui</span>
-    <h2 id="h-b">O que pediram pelo seu bairro?</h2>
-    <p class="sub">Digite o bairro ou a rua. Sem nada digitado, você vê a cidade inteira.</p>
+    <span class="eye">Consulta com filtros combináveis</span>
+    <h2 id="h-b">O que pediram pelo seu bairro ou tema?</h2>
+    <p class="sub">Combine bairro/rua, assunto, autor/coautor, partido, tipo de proposição, período, situação legislativa e tempo desde a apresentação. Mesma regra: <b>OU</b> dentro do mesmo filtro e <b>E</b> entre filtros diferentes.</p>
     <label class="search" for="bq">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-      <input id="bq" type="search" list="bl" placeholder="Digite seu bairro ou sua rua (ex.: Centro, Jardim das Indústrias, Jardim Satélite)" autocomplete="off" aria-label="Bairro ou rua">
+      <input id="bq" type="search" list="bl" placeholder="Digite bairro, rua ou palavra-chave (ex.: Centro, Jardim das Indústrias, Jardim Satélite)" autocomplete="off" aria-label="Bairro, rua ou palavra-chave">
     </label>
     <datalist id="bl"></datalist>
     <ul class="chips" id="chips"></ul>
     <div class="fbar">
       <div class="fgrp" id="f-per">
         <b>Período:</b>
-        <button class="fbtn on" type="button" data-per="">Todo o mandato</button>
-        <button class="fbtn" type="button" data-per="2026">2026</button>
-        <button class="fbtn" type="button" data-per="2025">2025</button>
-        <button class="fbtn" type="button" data-per="90d">Últimos 90 dias</button>
-        <button class="fbtn" type="button" data-per="30d">Últimos 30 dias</button>
+        <span id="f-per-btns"></span>
+        <span class="date-range">
+          <label for="f-d0" class="mute" style="font-size:12px">De:</label>
+          <input id="f-d0" type="date" aria-label="Data inicial">
+          <label for="f-d1" class="mute" style="font-size:12px">Até:</label>
+          <input id="f-d1" type="date" aria-label="Data final">
+        </span>
       </div>
       <div class="fgrp" id="f-st">
-        <b>Situação:</b>
+        <b>Situação legislativa:</b>
         <button class="fbtn on" type="button" data-st="">Todas</button>
-        <button class="fbtn" type="button" data-st="p">Aguardando Prefeitura</button>
+        <button class="fbtn" type="button" data-st="p">Encaminhada / Aguardando Prefeitura</button>
         <button class="fbtn" type="button" data-st="t">Em tramitação</button>
-        <button class="fbtn" type="button" data-st="a">Aprovadas / Concluídas</button>
-        <button class="fbtn" type="button" data-st="r">Retiradas / Rejeitadas</button>
+        <button class="fbtn" type="button" data-st="a">Aprovada / Sancionada / Concluída</button>
+        <button class="fbtn" type="button" data-st="r">Retirada / Rejeitada / Arquivada</button>
       </div>
-      <div class="fgrp" id="f-th" style="display:none">
-        <b>Assunto:</b>
-        <button class="fbtn on" type="button" id="f-th-btn" data-th="">Limpar assunto ✕</button>
+      <details class="adv-det" id="adv-det">
+        <summary>⚙️ Filtros avançados (Assunto, Categoria, Tipo, Autor/Coautor, Partido, Origem, Tempo) <span id="adv-cnt"></span></summary>
+        <div class="adv-body">
+          <div class="fgrp">
+            <b>Assunto (OU):</b>
+            <div class="mchips" id="f-th-list"></div>
+          </div>
+          <div class="fgrp">
+            <b>Categoria editorial (OU):</b>
+            <div class="mchips" id="f-cat-list"></div>
+          </div>
+          <div class="fgrp">
+            <b>Tipo original (OU):</b>
+            <div class="mchips" id="f-tp-list"></div>
+          </div>
+          <div class="fgrp">
+            <b>Origem (OU):</b>
+            <div class="mchips" id="f-orig-list"></div>
+          </div>
+          <div class="fgrp">
+            <b>Autor / Coautor (OU):</b>
+            <div class="mchips" id="f-aut-list"></div>
+          </div>
+          <div class="fgrp">
+            <b>Partido (2025–2028) (OU):</b>
+            <div class="mchips" id="f-part-list"></div>
+          </div>
+          <div class="fgrp" id="f-age">
+            <b>Tempo desde apresentação:</b>
+            <button class="fbtn on" type="button" data-age="">Qualquer tempo</button>
+            <button class="fbtn" type="button" data-age="30">+ de 30 dias</button>
+            <button class="fbtn" type="button" data-age="90">+ de 90 dias</button>
+            <button class="fbtn" type="button" data-age="180">+ de 180 dias</button>
+            <span class="mute" style="font-size:12px">Contagem em dias corridos até a data da coleta (não implica prazo legal vencido).</span>
+          </div>
+          <p class="mute" style="font-size:12.5px;margin:0">
+            <b>Regras:</b> Temas são atribuídos deterministicamente por palavras-chave na ementa (até 1 tema principal por registro). A busca por bairro/rua faz correspondência textual na ementa, pois as Câmaras não fornecem campo estruturado de bairro/coordenadas. O partido exibido é o registrado na legislatura 2025–2028 (sem reconstrução histórica de trocas partidárias).
+          </p>
+        </div>
+      </details>
+    </div>
+    <div class="af-bar" id="af-bar">
+      <div class="af-tags" id="af-tags"></div>
+      <div class="af-acts">
+        <label style="font-size:12.5px;color:var(--mute);font-weight:700">Ordenar:
+          <select id="f-ord" style="font:inherit;font-size:12.5px;padding:5px 8px;border-radius:8px;border:1px solid var(--hair);background:var(--paper);color:var(--ink)">
+            <option value="desc">Mais recentes</option>
+            <option value="asc">Mais antigos</option>
+          </select>
+        </label>
+        <button class="abtn" type="button" id="btn-clear-filters" style="display:none">✕ Limpar filtros</button>
+        <button class="abtn" type="button" id="btn-share-q">🔗 Compartilhar consulta</button>
+        <button class="abtn pri" type="button" id="btn-csv-q">📥 Exportar CSV filtrado</button>
       </div>
     </div>
     <div id="bres" aria-live="polite"></div>
   </section>
 
   <section id="sec-rep" aria-labelledby="h-r">
-    <span class="eye">Só aqui</span>
-    <h2 id="h-r">O problema que não some</h2>
-    <p class="sub">Quando o mesmo pedido volta várias vezes para a mesma rua, é sinal de que o problema continua lá. O site da Câmara não mostra isso: nós cruzamos os pedidos um por um.</p>
+    <span class="eye">Cruzamento por logradouro e tema</span>
+    <h2 id="h-r">Pedidos repetidos no mesmo local</h2>
+    <p class="sub">Agrupamento automático de logradouros com 3 ou mais pedidos classificados no mesmo tema. Ajuda a localizar demandas recorrentes sem substituir a verificação presencial.</p>
+    <div class="fbar" id="rep-fbar" style="margin-bottom:14px">
+      <div class="fgrp" style="gap:8px">
+        <input id="rep-q" type="search" placeholder="Filtrar local (rua ou bairro)..." style="font:inherit;font-size:13.5px;padding:7px 12px;border:1px solid var(--hair);border-radius:10px;background:var(--paper);min-width:210px">
+        <select id="rep-th" style="font:inherit;font-size:13.5px;padding:7px 10px;border:1px solid var(--hair);border-radius:10px;background:var(--paper)"><option value="">Todos os assuntos</option></select>
+        <select id="rep-per" style="font:inherit;font-size:13.5px;padding:7px 10px;border:1px solid var(--hair);border-radius:10px;background:var(--paper)"><option value="">Todo o período</option><option value="2026">Com ocorrências em 2026</option><option value="2025">Com ocorrências em 2025</option></select>
+        <select id="rep-min" style="font:inherit;font-size:13.5px;padding:7px 10px;border:1px solid var(--hair);border-radius:10px;background:var(--paper)"><option value="3">3+ pedidos</option><option value="5">5+ pedidos</option><option value="10">10+ pedidos</option></select>
+      </div>
+    </div>
     <div class="reps" id="reps"></div>
-    <p class="mute" style="font-size:13.5px;margin:12px 0 0;max-width:62ch">Pedido repetido não prova que a Prefeitura ignorou: pode ser outro trecho da mesma rua. Abra o cartão e leia os pedidos.</p>
+    <p class="mute" style="font-size:13.5px;margin:12px 0 0;max-width:66ch">Regra de agrupamento: mesmo nome normalizado de logradouro + mesmo tema classificado. Pedidos semelhantes podem se referir a trechos diferentes da via e não comprovam que o problema continua sem solução nem que houve omissão da Prefeitura.</p>
   </section>
 
   <section id="sec-hom" aria-labelledby="h-h">
-    <span class="eye">O trabalho da Câmara</span>
-    <h2 id="h-h">Homenagem ou trabalho?</h2>
+    <span class="eye">Distribuição temática</span>
+    <h2 id="h-h">Classificação das proposições</h2>
     <p class="sub" id="hsub"></p>
-    <div class="split" id="split" role="img" aria-label="Divisão das propostas por tipo"></div>
+    <div class="split" id="split" role="img" aria-label="Divisão das propostas por categoria"></div>
     <div class="cats" id="cats"></div>
+    <p class="mute" style="font-size:13px;margin:12px 0 0">Nota metodológica: a quantidade de proposições protocoladas não mede a qualidade nem a efetividade de um mandato.</p>
   </section>
 
   <section aria-labelledby="h-v">
     <span class="eye">Um por um</span>
-    <h2 id="h-v">Os 21 vereadores em uma frase</h2>
+    <h2 id="h-v">Os 21 vereadores e dados eleitorais</h2>
     <p class="sub" id="vsub"></p>
     <div class="qsort" id="qsort">
       <button class="qpill on" type="button" data-qo="gasto_desc">💰 Mais gastaram em 2024</button>
-      <button class="qpill" type="button" data-qo="cand26">🏛️ Candidatos a Deputado em 2026</button>
+      <button class="qpill" type="button" data-qo="cand26">🏛️ Candidatos em 2026</button>
       <button class="qpill" type="button" data-qo="cpv_desc">💸 Maior custo por voto</button>
-      <button class="qpill" type="button" data-qo="leis">📜 Mais leis aprovadas</button>
+      <button class="qpill" type="button" data-qo="leis">📜 Mais normas aprovadas</button>
       <button class="qpill" type="button" data-qo="h">🏅 Mais homenagens</button>
       <button class="qpill" type="button" data-qo="nome">🔤 Nome (A–Z)</button>
     </div>
@@ -466,7 +558,7 @@ footer p{margin:0 0 6px;max-width:70ch}
           <option value="gasto_desc">Maior gasto na campanha de 2024 (TSE)</option>
           <option value="gasto_asc">Menor gasto na campanha de 2024 (TSE)</option>
           <option value="cpv_desc">Maior custo por voto em 2024 (R$/voto)</option>
-          <option value="cand26">Mais gastaram para Deputado em 2026 (TSE)</option>
+          <option value="cand26">Mais gastaram em 2026 (TSE)</option>
           <option value="nome">Nome (A–Z)</option>
           <option value="mand_desc">Mais tempo como vereador (mandatos)</option>
           <option value="mand_asc">Menos tempo (1º mandato)</option>
@@ -474,8 +566,8 @@ footer p{margin:0 0 6px;max-width:70ch}
           <option value="faltas">Quem mais faltou</option>
           <option value="leis">Mais leis e normas em vigor</option>
           <option value="l">Mais propostas de lei (2025–2026)</option>
-          <option value="c">Mais cobranças à Prefeitura</option>
-          <option value="b">Mais pedidos para os bairros</option>
+          <option value="c">Mais fiscalização e cobranças</option>
+          <option value="b">Mais melhorias nos bairros</option>
           <option value="h">Mais homenagens</option>
           <option value="alin_desc">Maior alinhamento com o Prefeito</option>
           <option value="alin_asc">Menor alinhamento com o Prefeito</option>
@@ -485,32 +577,52 @@ footer p{margin:0 0 6px;max-width:70ch}
     </div>
     <p id="conta" aria-live="polite"></p>
     <div class="grid" id="grid"></div>
+    <div class="tse-box" id="tse-explorer">
+      <span class="eye" style="margin-bottom:4px">TSE (2012–2026)</span>
+      <h3 style="font-family:var(--display);font-size:24px;margin:0 0 6px">Consulta Eleitoral dos Eleitos (Receitas, Despesas e Candidaturas)</h3>
+      <p class="mute" style="font-size:14px;margin:0 0 12px">Filtre todas as candidaturas registradas no TSE pelos 21 vereadores e pelo Prefeito. Valores em reais nominais (sem correção monetária entre anos); recursos de campanha são distintos de salários, verba de gabinete e orçamento da Prefeitura. Prestação de contas detalhada disponível no TSE a partir de 2018.</p>
+      <div class="tse-grid">
+        <label class="field" for="te-ano">Ano da eleição<select id="te-ano"><option value="">Todos os anos</option></select></label>
+        <label class="field" for="te-cargo">Cargo disputado<select id="te-cargo"><option value="">Todos os cargos</option></select></label>
+        <label class="field" for="te-cand">Candidato<select id="te-cand"><option value="">Todos</option></select></label>
+        <label class="field" for="te-part">Partido na eleição<select id="te-part"><option value="">Todos</option></select></label>
+        <label class="field" for="te-sit">Resultado<select id="te-sit"><option value="">Todos</option></select></label>
+        <label class="field" for="te-rec">Faixa de receita<select id="te-rec"><option value="">Qualquer receita</option><option value="0-10000">Até R$ 10 mil</option><option value="10000-50000">R$ 10 mil a R$ 50 mil</option><option value="50000-200000">R$ 50 mil a R$ 200 mil</option><option value="200000+">Acima de R$ 200 mil</option></select></label>
+        <label class="field" for="te-desp">Faixa de despesa contratada<select id="te-desp"><option value="">Qualquer despesa</option><option value="0-10000">Até R$ 10 mil</option><option value="10000-50000">R$ 10 mil a R$ 50 mil</option><option value="50000-200000">R$ 50 mil a R$ 200 mil</option><option value="200000+">Acima de R$ 200 mil</option></select></label>
+        <label class="field" for="te-cpv">Custo por voto (2024)<select id="te-cpv"><option value="">Qualquer</option><option value="0-10">Até R$ 10/voto</option><option value="10-30">R$ 10 a R$ 30/voto</option><option value="30+">Acima de R$ 30/voto</option></select></label>
+      </div>
+      <div id="te-res"></div>
+    </div>
   </section>
 
   <section aria-labelledby="h-pref">
     <span class="eye">Executivo × Legislativo</span>
     <h2 id="h-pref">E o Prefeito?</h2>
-    <p class="sub">O que o prefeito enviou para a Câmara votar, quantos vetos foram mantidos ou derrubados pelos vereadores, quantas cobranças aguardam resposta da Prefeitura e quem vota mais alinhado com o governo.</p>
+    <p class="sub">Projetos enviados pelo Executivo à Câmara, placar de vetos, cobranças de fiscalização e votos nominais alinhados ao governo.</p>
     <div id="pref-box"></div>
   </section>
 
   <section id="sec-rachas" aria-labelledby="h-rachas">
-    <span class="eye">Votações divididas</span>
-    <h2 id="h-rachas">Onde a Câmara rachou</h2>
+    <span class="eye">Votações nominais em plenário</span>
+    <h2 id="h-rachas">Votações com divisão no plenário</h2>
     <p class="sub" id="rsub"></p>
-    <ul class="chips" id="rchips" style="margin-bottom:10px">
-      <li><button class="chip on" type="button" data-rf="all">Mais disputadas</button></li>
-      <li><button class="chip" type="button" data-rf="pref">Projetos e Vetos do Prefeito</button></li>
-      <li><button class="chip" type="button" data-rf="ver">Projetos de Vereadores</button></li>
-      <li><button class="chip" type="button" data-rf="rej">Rejeitados / Vetos derrubados</button></li>
-    </ul>
+    <div class="fbar" style="margin-bottom:12px">
+      <div class="fgrp" style="gap:8px">
+        <input id="r-q" type="search" placeholder="Buscar por número ou descrição da proposição..." style="font:inherit;font-size:13.5px;padding:7px 12px;border:1px solid var(--hair);border-radius:10px;background:var(--paper);min-width:220px;flex:1">
+        <select id="r-per" style="font:inherit;font-size:13.5px;padding:7px 10px;border:1px solid var(--hair);border-radius:10px;background:var(--paper)"><option value="">Todo o mandato</option><option value="2026">2026</option><option value="2025">2025</option></select>
+        <select id="r-orig" style="font:inherit;font-size:13.5px;padding:7px 10px;border:1px solid var(--hair);border-radius:10px;background:var(--paper)"><option value="">Todas as origens</option><option value="pref">Executivo / Vetos</option><option value="ver">Legislativo</option></select>
+        <select id="r-res" style="font:inherit;font-size:13.5px;padding:7px 10px;border:1px solid var(--hair);border-radius:10px;background:var(--paper)"><option value="">Todos os resultados</option><option value="aprov">Aprovado / Mantido</option><option value="rej">Rejeitado / Derrubado</option></select>
+        <select id="r-ver" style="font:inherit;font-size:13.5px;padding:7px 10px;border:1px solid var(--hair);border-radius:10px;background:var(--paper)"><option value="">Qualquer vereador</option></select>
+        <select id="r-pos" style="font:inherit;font-size:13.5px;padding:7px 10px;border:1px solid var(--hair);border-radius:10px;background:var(--paper)"><option value="">Qualquer posição</option><option value="S">Votou Sim</option><option value="N">Votou Não</option><option value="A">Abstenção</option></select>
+      </div>
+    </div>
     <div class="rachas" id="rachas"></div>
   </section>
 
   <section aria-labelledby="h-comp">
     <span class="eye">Lado a lado</span>
     <h2 id="h-comp">Compare dois vereadores</h2>
-    <p class="sub">Escolha dois vereadores para comparar tempo de casa, presença, propostas por tipo, leis em vigor, alinhamento com o Prefeito e em quantas votações nominais votaram igual ou diferente.</p>
+    <p class="sub">Compare mandatos, presença, proposições por categoria, normas aprovadas, alinhamento com o Executivo e concordância em votações nominais. Concordância de voto não comprova acordo político.</p>
     <div class="comp-box" id="comp-box">
       <div class="comp-sel">
         <label class="field" for="ca">Primeiro vereador
@@ -520,6 +632,14 @@ footer p{margin:0 0 6px;max-width:70ch}
         <label class="field" for="cb">Segundo vereador
           <select id="cb"></select>
         </label>
+      </div>
+      <div class="fgrp" style="margin-bottom:14px">
+        <b>Recorte de votações divididas:</b>
+        <select id="comp-per" style="font:inherit;font-size:13.5px;padding:6px 10px;border:1px solid var(--hair);border-radius:10px;background:var(--soft)">
+          <option value="">Todo o mandato (matriz nominal completa)</option>
+          <option value="2026">2026 (votações divididas)</option>
+          <option value="2025">2025 (votações divididas)</option>
+        </select>
       </div>
       <div id="comp-res"></div>
     </div>
@@ -653,21 +773,35 @@ footer p{margin:0 0 6px;max-width:70ch}
   </section>
 
   <section aria-labelledby="h-c">
-    <span class="eye">Transparência</span>
+    <span class="eye">Metodologia</span>
     <h2 id="h-c">De onde vêm os números</h2>
     <p class="sub">Tudo sai dos sistemas públicos oficiais da Câmara Municipal de São José dos Campos e do Tribunal Superior Eleitoral (TSE). Nada é digitado à mão.</p>
     <div class="how">
       <div><h3>Presença</h3><p id="m-pres"></p></div>
-      <div><h3>Homenagem ou trabalho</h3><p>O site separa cada proposta pelo tipo e pelas palavras do texto oficial, com a mesma regra determinística para todos os vereadores. Abra qualquer grupo, leia uma por uma e tire sua conclusão.</p></div>
-      <div><h3>Pedido não é obra feita</h3><p>Um pedido de melhoria (Indicação) é só uma sugestão encaminhada ao Executivo. O sistema legislativo não comprova execução física da obra.</p></div>
-      <div><h3>Salário</h3><p id="m-sal"></p></div>
+      <div><h3>Classificação das proposições</h3><p>O site separa cada proposta pelo tipo original e pelas palavras-chave da ementa, com a mesma regra determinística para todos os vereadores. Quando há limitação, cada registro recebe até 1 tema principal.</p></div>
+      <div><h3>Tramitação não é execução</h3><p>Uma Indicação encaminhada ou um projeto aprovado no Legislativo não comprova que a Prefeitura executou a obra ou serviço. Quando não há fonte oficial de obras/contratos integrada, exibimos “Execução não verificada por este portal”.</p></div>
+      <div><h3>Salário (estimativa)</h3><p id="m-sal"></p></div>
       <div><h3>Votos</h3><p id="m-vot"></p></div>
-      <div><h3>Achou um erro?</h3><p>Abra a ficha oficial pelo link do crachá e compare. Se a Câmara ou o TSE atualizarem o registro, o número muda automaticamente na coleta seguinte.</p></div>
+      <div><h3>Achou um erro?</h3><p>Abra o registro oficial pelo link do item e compare. Caso identifique divergência, registre uma issue no repositório público do projeto.</p></div>
+    </div>
+  </section>
+
+  <section id="sec-sobre" aria-labelledby="h-sobre">
+    <span class="eye">Responsabilidade e transparência</span>
+    <h2 id="h-sobre">Sobre o Radar Cidadão</h2>
+    <p class="sub">Informações claras sobre o escopo, a independência, os limites técnicos e os canais de correção deste portal.</p>
+    <div class="sobre-grid">
+      <div><h3>Objetivo e escopo</h3><p>Facilitar a fiscalização cidadã sobre Câmaras Municipais e Prefeituras no Vale do Paraíba e na Capital Paulista (Mandato 2025–2028), cruzando produção legislativa, votações nominais e prestação de contas eleitorais do TSE.</p></div>
+      <div><h3>Independência</h3><p>Iniciativa independente e apartidária, sem vínculo institucional, financeiro ou editorial com Câmaras Municipais, Prefeituras, órgãos públicos ou partidos políticos.</p></div>
+      <div><h3>Fontes e metodologia</h3><p>Dados extraídos exclusivamente de portais públicos oficiais (APIs/HTML/PDFs das Câmaras e bases abertas do TSE 2012–2026) por scripts automatizados com execução diária.</p></div>
+      <div><h3>Limitações conhecidas</h3><p>Sistemas legislativos municipais variam em cobertura: algumas Câmaras não publicam votações nominais individuais ou listas de presença em formato aberto, e não há acompanhamento automático de execução física de obras nesta versão.</p></div>
+      <div><h3>Repositório público e correções</h3><p>Código-fonte e dados públicos disponíveis em <a href="https://github.com/radarcidadao/radarcidadao.github.io" target="_blank" rel="noopener">github.com/radarcidadao/radarcidadao.github.io</a>. Correções e sugestões podem ser enviadas via <a href="https://github.com/radarcidadao/radarcidadao.github.io/issues" target="_blank" rel="noopener">Issues do repositório</a>.</p></div>
+      <div><h3>Referências de inspiração</h3><p>Interface e estrutura de dados inspiradas nos projetos públicos <i>Radar Taubaté</i> e <i>Radar PTlândia</i>, citados exclusivamente como referências técnicas (sem vínculo de autoria sobre esta plataforma).</p></div>
     </div>
   </section>
 
   <footer>
-    <p>Radar São José dos Campos (Rede Radar Cidadão) é um projeto independente de transparência pública, sem vínculo com a Câmara, com a Prefeitura ou com partido político. Inspirado nos projetos Radar PTlândia e Radar Taubaté.</p>
+    <p><b>Radar Cidadão</b> · Portal de transparência legislativa e eleitoral de São José dos Campos-SP.</p>
     <p id="rod"></p>
   </footer>
 </div>
@@ -714,11 +848,11 @@ const ICON={
  flag:'<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>'
 };
 const CAT={
- b:['Pedidos de melhoria nos bairros','Tapar buraco, podar árvore, trocar lâmpada, pintar lombada. É um pedido: a Prefeitura decide se faz.','pin','Pedido'],
- c:['Perguntas e cobranças','Pedidos de explicação à Prefeitura, audiências públicas e apelos a outros órgãos.','ask','Cobrança'],
- h:['Homenagens','Parabéns, moções de aplauso, votos de pesar, título de cidadão, nome de rua e datas comemorativas.','medal','Homenagem'],
- l:['Propostas de lei','Projetos que criam regra, programa ou obrigação na cidade.','law','Proposta de lei'],
- o:['Outros','Emendas a projetos, frentes parlamentares, notas de apoio e regras internas da Câmara.','dots','Outro']};
+ b:['Melhorias nos bairros','Tapar buraco, podar árvore, trocar lâmpada, sinalização. É uma solicitação ao Executivo, que decide se executa.','pin','Melhoria nos bairros'],
+ c:['Fiscalização e cobranças','Pedidos de informação à Prefeitura, audiências públicas e requerimentos de esclarecimento.','ask','Fiscalização'],
+ h:['Homenagens','Moções de aplauso, votos de pesar, títulos honoríficos, nomes de logradouros e datas comemorativas.','medal','Homenagem'],
+ l:['Propostas de lei','Projetos que criam normas, programas ou obrigações no município.','law','Proposta de lei'],
+ o:['Outros','Emendas, frentes parlamentares, atas, licenças e regras internas da Câmara.','dots','Outro']};
 const ORDER=['b','c','h','l','o'];
 const TH=[
  ['luz','Iluminação','bulb',/iluminac|lampada|luminaria|poste|\bled\b/],
@@ -767,15 +901,22 @@ if(D.aviso_coleta&&$('aviso-coleta')){
 }
 
 /* ---------- cartão de proposta ---------- */
-function stt(r){if(!r)return'';const k=/^(?:aprovad|conclu|mantid|sancionad|promulgad|eleit)/i.test(r)&&!/não eleit|vista/i.test(r)?'ok':/(?:rejeit|derrubad|retirad|vetad|não eleit)/i.test(r)?'no':/aguardando|tramita|suplente/i.test(r)?'wait':'';return `<span class="stt ${k}">${esc(r)}</span>`}
+function stt(r){if(!r)return'';const k=/^(?:aprovad|conclu|mantid|sancionad|promulgad|eleit)/i.test(r)&&!/não eleit|vista/i.test(r)?'ok':/(?:rejeit|derrubad|retirad|vetad|não eleit)/i.test(r)?'no':/aguardando|tramita|suplente|encaminh/i.test(r)?'wait':'';return `<span class="stt ${k}">${esc(r)}</span>`}
+function execStt(r){
+  const s=String(r||'').toLowerCase();
+  if(s.includes('respondid'))return '<span class="stt exec-resp" title="Resposta formal registrada no sistema legislativo; não comprova execução física.">Resposta oficial registrada</span>';
+  return '<span class="stt exec-no" title="O sistema da Câmara não acompanha execução física de obras ou serviços pela Prefeitura.">Execução não verificada por este portal</span>';
+}
 function itemHTML(it,showAut){
-  const c=it[4], t=THX[it.th], icon=t?t[2]:CAT[c][2];
-  const who=showAut?`<span class="who">${it[6].slice(0,3).map(a=>V[a]?av(a)+`<span class="n">${esc(V[a].ap)}</span>`:'').join('')}${it[6].length>3?`<span class="mute">+${it[6].length-3}</span>`:''}</span>`:'<span></span>';
+  const c=it[4]||'o', t=THX[it.th], icon=t?t[2]:(CAT[c]?CAT[c][2]:'dots');
+  const isExec=!!it.isExec;
+  const who=showAut?(isExec?`<span class="who"><span class="n">Poder Executivo (${esc((D.pref&&D.pref.nome)||'Prefeitura')})</span></span>`:`<span class="who">${it[6].slice(0,3).map(a=>V[a]?av(a)+`<span class="n">${esc(V[a].ap)}</span>`:'').join('')}${it[6].length>3?`<span class="mute">+${it[6].length-3}</span>`:''}</span>`):'<span></span>';
   const href=procHref(it[0],it[10]);
   const link=it[7]&&href&&href!=='#'?`<a class="ext" href="${esc(href)}" target="_blank" rel="noopener">Abrir na Câmara ↗</a>`:'';
+  const sitOrig=it[5]?(it[9]==='p'?'Encaminhada / Aguardando resposta':it[5]):(it[9]==='a'?'Concluída / Tramitação encerrada':it[9]==='t'?'Em tramitação':'Situação não informada');
   return `<li class="it k-${c}"><span class="ic">${svg(ICON[icon])}</span><div>
     <p class="tx">${esc(it.tx)}</p>
-    <div class="mt"><span class="lab">${t?esc(t[1]):CAT[c][3]}</span>${stt(it[5])}<span>${dt(it[3])}</span><span>·</span><span>${esc(it[1])}</span></div>
+    <div class="mt"><span class="lab">${t?esc(t[1]):(CAT[c]?CAT[c][3]:'Outro')}</span>${stt(sitOrig)}${execStt(it[5])}<span>${dt(it[3])}</span><span>·</span><span>${esc(it[1])}</span></div>
     <div class="ft">${who}${link}</div></div></li>`;
 }
 function pager(host,items,showAut,step){
@@ -800,7 +941,7 @@ $('sh-x').addEventListener('click',closeSheet); veil.addEventListener('click',cl
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&sheet.classList.contains('on'))closeSheet()});
 function openCat(c,vi){
   const all=IT.filter(it=>it[4]===c&&(vi==null||it[6].includes(vi)));
-  openSheet(c,CAT[c][2],CAT[c][0],`${nf(all.length)} ${vi==null?'de todos os vereadores':'de '+V[vi].ap} até agora`);
+  openSheet(c,CAT[c][2],CAT[c][0],`${nf(all.length)} ${vi==null?'de todos os vereadores':'de '+V[vi].ap} no recorte`);
   const th=themeCount(all); let cur='';
   const draw=()=>{pager($('sh-b'),cur?all.filter(it=>it.th===cur):all,vi==null,20)};
   if(th.length>1){
@@ -812,57 +953,89 @@ function openCat(c,vi){
 }
 function openNaos(vi){
   const v=V[vi];
-  openSheet('o','sign',`Quando ${v.ap} não votou “sim”`,`${v.naos.length} votações até agora`);
+  openSheet('o','sign',`Quando ${v.ap} não votou “sim”`,`${v.naos.length} votações registradas`);
   $('sh-b').innerHTML='<ul class="items">'+v.naos.map(n=>`<li class="it k-o"><span class="ic">${svg(ICON.sign)}</span><div><p class="tx">${esc(n.e)}</p>
     <div class="mt"><span class="stt ${n.v==='nao'?'no':''}">${n.v==='nao'?'Votou não':'Absteve-se'}</span><span>${dt(n.d.replace(/-/g,''))}</span><span>·</span><span>${esc(n.t)}</span></div>
     <div class="ft"><span class="mute">${n.a?'Proposta de: '+esc(n.a):'Votação nominal em plenário'}</span>${n.u?`<a class="ext" href="${esc(n.u)}" target="_blank" rel="noopener">Abrir na Câmara ↗</a>`:''}</div></div></li>`).join('')+'</ul>';
 }
 
-/* ---------- topo vivo ---------- */
+/* ---------- topo, cobertura e estimativa de subsídios ---------- */
 const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
 function countUp(el,to){ if(reduce||!to){el.textContent=nf(to);return} const t0=performance.now(),from=Math.round(to*.82);
   const step=t=>{const p=Math.min(1,(t-t0)/900),e=1-Math.pow(1-p,3);el.textContent=nf(Math.round(from+(to-from)*e));if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)}
-const STATS=[['',IT.length,'propostas até agora'],['k-b',D.catot.b||0,'pedidos nos bairros até agora'],['k-h',D.catot.h||0,'homenagens até agora'],['k-l',D.catot.l||0,'propostas de lei até agora']];
-$('stats').innerHTML=STATS.map(([k,n,l],i)=>`<div class="stat ${k}"><b class="${k?'k':''}" id="st${i}">${nf(n)}</b><span>${l}</span></div>`).join('');
-STATS.forEach(([k,n],i)=>countUp($('st'+i),n));
+const STATS=IT.length?[
+  ['',IT.length,'proposições coletadas'],
+  ['k-b',D.catot.b||0,'melhorias nos bairros'],
+  ['k-h',D.catot.h||0,'homenagens'],
+  ['k-l',D.catot.l||0,'propostas de lei']
+]:[
+  ['',V.length,'vereadores titulares (TSE)'],
+  ['k-b',null,'proposições: dado indisponível'],
+  ['k-h',null,'votações: dado indisponível'],
+  ['k-l',null,'presença: dado indisponível']
+];
+$('stats').innerHTML=STATS.map(([k,n,l],i)=>`<div class="stat ${k}"><b class="${k?'k':''}" id="st${i}">${n===null?'Indisp.':nf(n)}</b><span>${l}</span></div>`).join('');
+STATS.forEach(([k,n],i)=>{if(n!==null)countUp($('st'+i),n)});
 const POSSE=new Date(D.posse+'T00:00:00-03:00').getTime(), POR_MS=V.length*D.sal.v*12/(365.25*864e5);
 const brl=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
 function tick(){ $('tick').textContent=brl.format(Math.max(0,Date.now()-POSSE)*POR_MS) }
 tick(); if(!reduce)setInterval(tick,120);
 const GER=new Date(D.gerh);
-function ago(){ const m=Math.max(0,Math.round((Date.now()-GER.getTime())/6e4));
-  const q=m<2?'agora mesmo':m<60?`há ${m} minutos`:m<120?'há 1 hora':m<1440?`há ${Math.floor(m/60)} horas`:m<2880?'ontem':`há ${Math.floor(m/1440)} dias`;
-  $('livet').textContent=`Ao vivo · dados conferidos ${q}`;
-  $('upd').textContent=`Última conferência oficial: ${GER.toLocaleDateString('pt-BR',{day:'numeric',month:'long'})} às ${GER.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}. Atualização diária automatizada.`}
+const itemDates=IT.map(x=>x[3]).filter(d=>d&&d.length===8&&d<='20281231').sort();
+const minItemDt=itemDates[0]||'', maxItemDt=itemDates[itemDates.length-1]||'';
+function ago(){
+  const m=Math.max(0,Math.round((Date.now()-GER.getTime())/6e4));
+  const q=m<2?'há poucos minutos':m<60?`há ${m} min`:m<120?'há 1 hora':m<1440?`há ${Math.floor(m/60)} horas`:m<2880?'ontem':`há ${Math.floor(m/1440)} dias`;
+  $('livet').textContent=`Atualização diária · coleta ${q}`;
+  $('upd').textContent=`Última coleta bem-sucedida: ${GER.toLocaleDateString('pt-BR',{day:'numeric',month:'long',year:'numeric'})} às ${GER.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}.`}
 ago(); setInterval(ago,6e4);
+if($('cobertura-box')){
+  const statusTag=D.aviso_coleta?'<span class="stt wait">Coleta parcial (apenas TSE)</span>':(IT.length&&D.nvot?'<span class="stt ok">Cobertura legislativa + TSE</span>':'<span class="stt wait">Cobertura legislativa parcial + TSE</span>');
+  const lims=[];
+  if(D.aviso_coleta)lims.push('Portal legislativo da Câmara com indisponibilidade ou barreira anti-bot (reCAPTCHA).');
+  else if(!D.nvot)lims.push('Câmara sem votações nominais individuais disponibilizadas em formato aberto.');
+  if(!(D.sess||[]).length)lims.push('Listas de presença em plenário não disponibilizadas em formato estruturado.');
+  lims.push('Execução física de obras/serviços não é acompanhada por este portal.');
+  $('cobertura-box').innerHTML=`
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between">
+      <b>📡 Cobertura e Atualização dos Dados</b>${statusTag}
+    </div>
+    <div class="cov-grid">
+      <div><strong>Fontes consultadas</strong><span>${esc(CFG.fonte_nome||('Câmara Municipal de '+CIDADE))} + TSE (2012–2026)</span></div>
+      <div><strong>Período coberto</strong><span>${minItemDt?`${dt(minItemDt)} a ${dt(maxItemDt)}`:'Mandato 2025–2028 (dados eleitorais TSE 2012–2026)'}</span></div>
+      <div><strong>Registro mais recente</strong><span>${maxItemDt?dt(maxItemDt):(D.ult?dt(D.ult.replace(/-/g,'')):'Sem registros legislativos')}</span></div>
+      <div><strong>Limitações conhecidas</strong><span>${esc(lims.join(' '))}</span></div>
+    </div>`;
+}
 
-/* ---------- pedidos repetidos ---------- */
+/* ---------- pedidos repetidos (com filtros) ---------- */
 (D.rep||[]).forEach(g=>{g.items=(g.ids||[]).map(n=>IT[n]).filter(Boolean)});
 const repHTML=g=>`<button class="rp" type="button" data-g="${D.rep.indexOf(g)}"><span class="rn num">${g.n}<small>vezes</small></span>
   <span class="rr">${esc(g.r)}</span><span class="rb">${esc(g.b||CIDADE)}</span>
-  <span class="rm"><span class="lab">${esc(THX[g.th]?THX[g.th][1]:'Melhoria')}</span><span>${g.a} ${g.a===1?'vereador pediu':'vereadores pediram'}</span><span>·</span><span>de ${mesAno(g.d0)} a ${mesAno(g.d1)}</span></span><span class="go" style="grid-column:1/-1;color:var(--red);font-weight:700;font-size:14px;margin-top:6px">Ver pedidos e cobrar →</span></button>`;
+  <span class="rm"><span class="lab">${esc(THX[g.th]?THX[g.th][1]:'Melhoria')}</span><span>${g.a} ${g.a===1?'vereador pediu':'vereadores pediram'}</span><span>·</span><span>1ª: ${mesAno(g.d0)} · última: ${mesAno(g.d1)}</span></span><span class="go" style="grid-column:1/-1;color:var(--red);font-weight:700;font-size:14px;margin-top:6px">Ver registros e perguntar sobre andamento →</span></button>`;
 const TEMA={luz:'iluminação',asf:'conserto de asfalto',tra:'melhoria no trânsito',agu:'conserto de água e esgoto',lim:'limpeza e poda',cal:'conserto de calçada',laz:'melhoria em praça e área de lazer',sau:'melhoria na saúde',edu:'melhoria em escola',seg:'segurança',bus:'melhoria no ônibus'};
 const SITE=/^https?:/.test(location.protocol)?location.origin+location.pathname:'https://radarcidadao.github.io/sjc/';
 function openRep(g){
-  openSheet('b',THX[g.th]?THX[g.th][2]:'pin',g.r,`${THX[g.th]?THX[g.th][1]:'Melhoria'} · pedido ${g.n} vezes até agora${g.b?' · '+g.b:''}`);
+  openSheet('b',THX[g.th]?THX[g.th][2]:'pin',g.r,`${THX[g.th]?THX[g.th][1]:'Melhoria'} · ${g.n} registros encontrados${g.b?' · '+g.b:''}`);
   const cnt=new Map(); g.items.forEach(it=>it[6].forEach(a=>cnt.set(a,(cnt.get(a)||0)+1)));
   const who=[...cnt.entries()].sort((a,b)=>b[1]-a[1]);
-  const msg=a=>`Olá, ${V[a].ap}. Moro em ${CIDADE}. A Câmara já recebeu ${g.n} pedidos de ${TEMA[g.th]||'melhoria'} na ${g.r}${g.b?', '+g.b:''}, desde ${mesAno(g.d0)}. ${cnt.get(a)===1?'Um deles saiu':cnt.get(a)+' deles saíram'} do seu gabinete, e o problema continua. O que a Prefeitura respondeu? O que ainda dá para fazer?\n\nFonte: ${SITE}`;
-  $('sh-b').innerHTML=`<div class="cob"><h3>Cobre uma resposta</h3>
-    <p>A mensagem já vem pronta. Escolha o vereador, ajuste o texto se quiser e envie.</p>
+  const regs=(g.items||[]).slice(0,3).map(it=>it[1]).join(', ');
+  const msg=a=>`Olá, ${V[a].ap}. Moro em ${CIDADE}. Consultei no painel Radar ${CIDADE} que há ${g.n} registros sobre ${TEMA[g.th]||'melhoria'} relacionados à ${g.r}${g.b?', '+g.b:''}, entre ${mesAno(g.d0)} e ${mesAno(g.d1)}${regs?` (ex.: ${regs})`:''}. ${cnt.get(a)===1?'Um deles foi protocolado':'Parte deles ('+cnt.get(a)+') foi protocolada'} pelo seu gabinete.\n\nGostaria de saber se a Prefeitura já registrou resposta oficial e qual é o andamento ou previsão de atendimento para esse local.\n\nFonte: ${SITE}`;
+  $('sh-b').innerHTML=`<div class="cob"><h3>Perguntar sobre resposta e andamento</h3>
+    <p>A mensagem cita os registros encontrados e pode ser editada antes de você enviar pelos canais abaixo.</p>
     <label class="field" for="cob-v">Para quem
-      <select id="cob-v">${who.map(([a,n])=>`<option value="${a}">${esc(V[a].ap)} (${n} ${n===1?'pedido':'pedidos'} para este local)</option>`).join('')}</select></label>
-    <label class="field" for="cob-t">Mensagem
+      <select id="cob-v">${who.map(([a,n])=>`<option value="${a}">${esc(V[a].ap)} (${n} ${n===1?'registro':'registros'} para este local)</option>`).join('')}</select></label>
+    <label class="field" for="cob-t">Mensagem (editável)
       <textarea id="cob-t"></textarea></label>
     <div class="acts" id="cob-a"></div><div class="ct" id="cob-c"></div></div>
-    <p class="h3">Os ${g.n} pedidos, do mais recente ao mais antigo</p><div id="replist"></div>`;
+    <p class="h3">Os ${g.n} registros relacionados, do mais recente ao mais antigo</p><div id="replist"></div>`;
   const sel=$('cob-v'), ta=$('cob-t');
   const links=()=>{const v=V[+sel.value], t=encodeURIComponent(ta.value);
     $('cob-a').innerHTML=(v.whats?`<a class="btn wa" href="https://wa.me/55${v.whats}?text=${t}">WhatsApp do gabinete</a>`:'')
-      +(v.email?`<a class="btn" href="mailto:${esc(v.email)}?subject=${encodeURIComponent(g.r+': o problema continua')}&body=${t}">Enviar por e-mail</a>`:'')
-      +`<a class="btn wa" href="https://wa.me/?text=${t}">Mandar no grupo do bairro</a><button class="btn gh" type="button" id="cob-cp">Copiar mensagem</button>`;
+      +(v.email?`<a class="btn" href="mailto:${esc(v.email)}?subject=${encodeURIComponent(g.r+': consulta sobre andamento')}&body=${t}">Enviar por e-mail</a>`:'')
+      +`<a class="btn wa" href="https://wa.me/?text=${t}">Compartilhar no WhatsApp</a><button class="btn gh" type="button" id="cob-cp">Copiar mensagem</button>`;
     $('cob-c').innerHTML=[v.email?`E-mail oficial: <b>${esc(v.email)}</b>`:'',v.tel?`Telefone do gabinete: <b>${esc(v.tel)}</b>`:''].filter(Boolean).join(' · ')+(v.whats?'':'<br>A Câmara não divulga WhatsApp deste gabinete.');
-    $('cob-cp').onclick=async e=>{try{await navigator.clipboard.writeText(ta.value);e.target.textContent='Copiado'}catch(_){ta.focus();ta.select();e.target.textContent='Selecionado: copie com o dedo'}}};
+    $('cob-cp').onclick=async e=>{try{await navigator.clipboard.writeText(ta.value);e.target.textContent='Copiado'}catch(_){ta.focus();ta.select();e.target.textContent='Selecionado: copie manualmente'}}};
   const fill=()=>{ta.value=msg(+sel.value);links()};
   sel.addEventListener('change',fill); ta.addEventListener('input',links); fill();
   pager($('replist'),g.items,true,20);
@@ -871,74 +1044,293 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-g]');if(b)
 (function(){
   const host=$('reps');
   if(!D.rep||!D.rep.length){
-    host.innerHTML=`<div class="panel" style="grid-column:1/-1;margin-top:0"><p class="mute" style="margin:0">${IT.length?'Nenhum logradouro acumulou 3 ou mais pedidos idênticos no recorte atual.':'Cruzamento de ruas disponível assim que o portal legislativo da Câmara liberar acesso público sem CAPTCHA.'}</p></div>`;
+    if($('rep-fbar'))$('rep-fbar').style.display='none';
+    host.innerHTML=`<div class="panel" style="grid-column:1/-1;margin-top:0"><p class="mute" style="margin:0">${IT.length?'Nenhum logradouro acumulou 3 ou mais pedidos no mesmo tema neste recorte.':'Cruzamento por logradouro indisponível enquanto não houver proposições individuais coletadas desta Câmara.'}</p></div>`;
     return;
   }
-  let n=0; const btn=document.createElement('button'); btn.className='more'; btn.type='button'; btn.style.gridColumn='1/-1';
-  const add=()=>{host.insertAdjacentHTML('beforeend',D.rep.slice(n,n+9).map(repHTML).join(''));n+=9;host.appendChild(btn);
-    if(n>=D.rep.length)btn.remove();else btn.textContent=`Mostrar mais locais (${D.rep.length-n} na fila)`};
-  btn.addEventListener('click',()=>{btn.remove();add()}); add();
+  const repThSel=$('rep-th'), repQ=$('rep-q'), repPer=$('rep-per'), repMin=$('rep-min');
+  if(repThSel){
+    const ths=[...new Set(D.rep.map(g=>g.th).filter(Boolean))];
+    repThSel.innerHTML='<option value="">Todos os assuntos</option>'+ths.map(t=>`<option value="${t}">${esc(THX[t]?THX[t][1]:t)}</option>`).join('');
+  }
+  let shownRep=9;
+  function drawReps(){
+    const q=norm(repQ?repQ.value.trim():'');
+    const th=repThSel?repThSel.value:'';
+    const per=repPer?repPer.value:'';
+    const minN=+(repMin?repMin.value:3);
+    const list=D.rep.filter(g=>{
+      if(g.n<minN)return false;
+      if(th&&g.th!==th)return false;
+      if(q&&!norm(g.r+' '+(g.b||'')).includes(q))return false;
+      if(per&&!(g.d0.startsWith(per)||g.d1.startsWith(per)))return false;
+      return true;
+    });
+    if(!list.length){
+      host.innerHTML='<div class="panel" style="grid-column:1/-1;margin-top:0"><p class="mute" style="margin:0">Nenhum logradouro encontrado com esses filtros.</p></div>';
+      return;
+    }
+    host.innerHTML=list.slice(0,shownRep).map(repHTML).join('')+(list.length>shownRep?`<button class="more" type="button" id="rep-more" style="grid-column:1/-1">Mostrar mais locais (${list.length-shownRep} restantes)</button>`:'');
+    const rm=$('rep-more'); if(rm)rm.onclick=()=>{shownRep+=9;drawReps()};
+  }
+  [repQ,repThSel,repPer,repMin].forEach(el=>el&&el.addEventListener('input',()=>{shownRep=9;drawReps()}));
+  drawReps();
 })();
 
-/* ---------- bairro + filtros de período, situação e assunto ---------- */
-$('bl').innerHTML=(D.bairros||[]).map(b=>`<option value="${esc(b)}"></option>`).join('');
+/* ---------- consulta combinável (OU dentro do filtro, E entre filtros) ---------- */
+const PREF_ITEMS=((D.pref&&D.pref.items)||[]).map(p=>{
+  const arr=[p[0],p[1],p[2],p[3],'l',p[5],[],1,'',p[6]||'t'];
+  arr.isExec=true; arr.orig='exec'; arr.tpCode=String(p[1]||'').split(/\s+/)[0]||'EXEC';
+  arr.n=norm(p[2]+' '+p[1]); arr.th=''; arr.tx=clean(arr);
+  return arr;
+});
+IT.forEach(it=>{it.isExec=false; it.orig='ver'; it.tpCode=String(it[1]||'').split(/\s+/)[0]||'OUT';});
+const ALL_Q=[...IT,...PREF_ITEMS];
+const sugestoes=[...new Set([...(D.bairros||[]),...(D.rep||[]).slice(0,40).map(g=>g.r)])];
+$('bl').innerHTML=sugestoes.map(b=>`<option value="${esc(b)}"></option>`).join('');
 $('chips').innerHTML=(D.bairros||[]).slice(0,10).map(b=>`<li><button class="chip" type="button" data-b="${esc(b)}">${esc(b)}</button></li>`).join('');
-let curPer='', curSt='', curTh='';
+
+const TP_LABELS={IND:'Indicação (IND)',REQ:'Requerimento (REQ)',PI:'Pedido de Informação (PI)',PL:'Projeto de Lei (PL)',PLL:'Projeto de Lei do Legislativo (PLL)',PLC:'Projeto de Lei Complementar (PLC)',PLCL:'Projeto de Lei Complementar (PLCL)',PLE:'Projeto de Lei do Executivo (PLE)',PLCE:'PL Complementar do Executivo (PLCE)',PDL:'Decreto Legislativo (PDL)',PEL:'Emenda à Lei Orgânica (PEL)',PLO:'Emenda à Lei Orgânica (PLO)',PR:'Resolução (PR)',PRE:'Resolução (PRE)',MOC:'Moção (MOC)',RDS:'Req. Sem Plenário (RDS)',RPS:'Req. Plenário (RPS)',RDP:'Req. Informação/CPI (RDP)',EME:'Emenda (EME)',PESAR:'Voto de Pesar (PESAR)'};
+const QS={q:'',per:'',d0:'',d1:'',st:[],th:[],cat:[],tp:[],orig:[],aut:[],part:[],age:'',ord:'desc'};
+
+// Popular períodos dinâmicos com os anos presentes nos dados
+const anosDisp=[...new Set(ALL_Q.map(it=>String(it[3]||'').slice(0,4)).filter(y=>/^202\d$/.test(y)))].sort((a,b)=>b.localeCompare(a));
+if($('f-per-btns')){
+  $('f-per-btns').innerHTML=
+    `<button class="fbtn on" type="button" data-per="">Todo o mandato</button>`
+    +anosDisp.map(y=>`<button class="fbtn" type="button" data-per="${y}">${y}</button>`).join('')
+    +`<button class="fbtn" type="button" data-per="30d">Últimos 30 dias</button>`
+    +`<button class="fbtn" type="button" data-per="90d">Últimos 90 dias</button>`
+    +`<button class="fbtn" type="button" data-per="180d">Últimos 180 dias</button>`;
+}
+
+// Popular filtros avançados (Assunto, Categoria, Tipo, Origem, Autor, Partido)
+(function initAdvFilters(){
+  const thAll=[...TH.map(t=>[t[0],t[1]]),...THH.map(t=>[t[0],t[1]]),['__none__','Sem classificação']];
+  if($('f-th-list'))$('f-th-list').innerHTML=thAll.map(([k,lbl])=>`<button class="fbtn" type="button" data-m="th" data-v="${k}">${esc(lbl)}</button>`).join('');
+  if($('f-cat-list'))$('f-cat-list').innerHTML=ORDER.map(c=>`<button class="fbtn" type="button" data-m="cat" data-v="${c}">${esc(CAT[c][0])}</button>`).join('');
+  const tpCounts=new Map(); ALL_Q.forEach(it=>{const t=it.tpCode; if(t)tpCounts.set(t,(tpCounts.get(t)||0)+1)});
+  const tps=[...tpCounts.entries()].sort((a,b)=>b[1]-a[1]);
+  if($('f-tp-list'))$('f-tp-list').innerHTML=tps.map(([k,n])=>`<button class="fbtn" type="button" data-m="tp" data-v="${esc(k)}">${esc(TP_LABELS[k]||k)} <small>(${nf(n)})</small></button>`).join('');
+  const origs=[['ver','Vereadores']]; if(PREF_ITEMS.length)origs.push(['exec','Executivo / Prefeito']);
+  if($('f-orig-list'))$('f-orig-list').innerHTML=origs.map(([k,lbl])=>`<button class="fbtn" type="button" data-m="orig" data-v="${k}">${lbl}</button>`).join('');
+  if($('f-aut-list'))$('f-aut-list').innerHTML=V.map((v,i)=>`<button class="fbtn" type="button" data-m="aut" data-v="${i}">${esc(v.ap)} <small>(${esc(v.part)})</small></button>`).join('');
+  const parts=[...new Set(V.map(v=>v.part).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt'));
+  if($('f-part-list'))$('f-part-list').innerHTML=parts.map(p=>`<button class="fbtn" type="button" data-m="part" data-v="${esc(p)}">${esc(p)}</button>`).join('');
+})();
+
 function getCutoffDate(days){
   const ref=new Date(D.ger+'T12:00:00-03:00');
   ref.setDate(ref.getDate()-days);
   return ref.toISOString().slice(0,10).replace(/-/g,'');
 }
-function bairro(q){
-  const host=$('bres'), k=norm(q.trim()), city=k.length===0;
+function daysBetween(aaaammdd){
+  if(!aaaammdd||aaaammdd.length!==8)return 0;
+  const d1=new Date(`${aaaammdd.slice(0,4)}-${aaaammdd.slice(4,6)}-${aaaammdd.slice(6,8)}T12:00:00-03:00`).getTime();
+  const d2=new Date(D.ger+'T12:00:00-03:00').getTime();
+  return Math.max(0,Math.floor((d2-d1)/864e5));
+}
+function syncUrlFromQS(push){
+  const p=new URLSearchParams();
+  if(QS.q)p.set('q',QS.q);
+  if(QS.per)p.set('per',QS.per);
+  if(QS.d0)p.set('d0',QS.d0);
+  if(QS.d1)p.set('d1',QS.d1);
+  if(QS.st.length)p.set('st',QS.st.join(','));
+  if(QS.th.length)p.set('th',QS.th.join(','));
+  if(QS.cat.length)p.set('cat',QS.cat.join(','));
+  if(QS.tp.length)p.set('tp',QS.tp.join(','));
+  if(QS.orig.length)p.set('orig',QS.orig.join(','));
+  if(QS.aut.length)p.set('aut',QS.aut.join(','));
+  if(QS.part.length)p.set('part',QS.part.join(','));
+  if(QS.age)p.set('age',QS.age);
+  if(QS.ord&&QS.ord!=='desc')p.set('ord',QS.ord);
+  const qs=p.toString();
+  const newUrl=location.pathname+(qs?'?'+qs:'')+location.hash;
+  try{ if(push)history.pushState(null,'',newUrl); else history.replaceState(null,'',newUrl); }catch(_){}
+}
+function loadQSFromUrl(){
+  const p=new URLSearchParams(location.search);
+  QS.q=p.get('q')||''; QS.per=p.get('per')||''; QS.d0=p.get('d0')||''; QS.d1=p.get('d1')||'';
+  QS.st=(p.get('st')||'').split(',').filter(Boolean);
+  QS.th=(p.get('th')||'').split(',').filter(Boolean);
+  QS.cat=(p.get('cat')||'').split(',').filter(Boolean);
+  QS.tp=(p.get('tp')||'').split(',').filter(Boolean);
+  QS.orig=(p.get('orig')||'').split(',').filter(Boolean);
+  QS.aut=(p.get('aut')||'').split(',').filter(Boolean);
+  QS.part=(p.get('part')||'').split(',').filter(Boolean);
+  QS.age=p.get('age')||''; QS.ord=p.get('ord')||'desc';
+}
+function syncControlsUI(){
+  if($('bq'))$('bq').value=QS.q;
+  if($('f-d0'))$('f-d0').value=QS.d0;
+  if($('f-d1'))$('f-d1').value=QS.d1;
+  if($('f-ord'))$('f-ord').value=QS.ord;
+  document.querySelectorAll('#f-per [data-per]').forEach(b=>b.classList.toggle('on',b.dataset.per===QS.per));
+  document.querySelectorAll('#f-st [data-st]').forEach(b=>b.classList.toggle('on',b.dataset.st===''?!QS.st.length:QS.st.includes(b.dataset.st)));
+  document.querySelectorAll('#f-age [data-age]').forEach(b=>b.classList.toggle('on',b.dataset.age===QS.age));
+  document.querySelectorAll('[data-m]').forEach(b=>{
+    const arr=QS[b.dataset.m]||[];
+    b.classList.toggle('on',arr.includes(b.dataset.v));
+  });
+  const advN=QS.th.length+QS.cat.length+QS.tp.length+QS.orig.length+QS.aut.length+QS.part.length+(QS.age?1:0);
+  if($('adv-cnt'))$('adv-cnt').textContent=advN?`(${advN} ativos)`:'';
+  if(advN&&$('adv-det'))$('adv-det').open=true;
+}
+function renderActiveTags(){
+  const tags=[];
+  const add=(k,v,lbl)=>tags.push(`<span class="af-tag">${esc(lbl)}<button type="button" data-rm-k="${k}" data-rm-v="${esc(v)}" aria-label="Remover filtro ${esc(lbl)}">✕</button></span>`);
+  if(QS.q)add('q','',`Busca: "${QS.q}"`);
+  if(QS.per)add('per','',`Período: ${QS.per}`);
+  if(QS.d0||QS.d1)add('dates','',`Data: ${QS.d0||'...'} a ${QS.d1||'...'}`);
+  const stLbl={p:'Encaminhada / Aguardando Prefeitura',t:'Em tramitação',a:'Aprovada / Sancionada / Concluída',r:'Retirada / Rejeitada / Arquivada'};
+  QS.st.forEach(v=>add('st',v,stLbl[v]||v));
+  QS.th.forEach(v=>add('th',v,`Assunto: ${v==='__none__'?'Sem classificação':(THX[v]?THX[v][1]:v)}`));
+  QS.cat.forEach(v=>add('cat',v,`Categoria: ${CAT[v]?CAT[v][3]:v}`));
+  QS.tp.forEach(v=>add('tp',v,`Tipo: ${v}`));
+  QS.orig.forEach(v=>add('orig',v,`Origem: ${v==='exec'?'Executivo':'Vereadores'}`));
+  QS.aut.forEach(v=>add('aut',v,`Autor: ${V[+v]?V[+v].ap:v}`));
+  QS.part.forEach(v=>add('part',v,`Partido: ${v}`));
+  if(QS.age)add('age','',`Apresentado há +${QS.age} dias`);
+  if($('af-tags'))$('af-tags').innerHTML=tags.length?tags.join(''):'<span class="mute" style="font-size:12.5px">Nenhum filtro restritivo ativo (mostrando todos os registros coletados).</span>';
+  if($('btn-clear-filters'))$('btn-clear-filters').style.display=tags.length?'':'none';
+}
+let LAST_FILTERED=[];
+function runConsulta(pushHistory){
+  syncControlsUI(); renderActiveTags(); syncUrlFromQS(!!pushHistory);
+  const host=$('bres');
+  const k=norm(QS.q.trim()), city=k.length===0;
   $('chips').querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',norm(x.dataset.b)===k));
-  if(!IT.length){
-    host.innerHTML=`<div class="panel"><p class="mute" style="margin:0">As proposições individuais por bairro de ${esc(CIDADE)} serão exibidas automaticamente assim que o servidor de processo legislativo da Câmara responder sem bloqueio CAPTCHA. Enquanto isso, consulte os gastos eleitorais do TSE de cada vereador e use o <b>Gerador de Cobrança Cidadã</b> na aba Guia Cidadão.</p></div>`;
+  if(!ALL_Q.length){
+    LAST_FILTERED=[];
+    host.innerHTML=`<div class="panel"><p class="mute" style="margin:0">As proposições de ${esc(CIDADE)} estão indisponíveis no momento (bloqueio técnico ou servidor legislativo fora do ar). Consulte os dados eleitorais do TSE e o Guia Cidadão abaixo.</p></div>`;
     return;
   }
-  if(!city&&k.length<3){host.innerHTML='<div class="panel"><p class="mute" style="margin:0">Continue digitando: preciso de pelo menos 3 letras.</p></div>';return}
-  const cut90=curPer==='90d'?getCutoffDate(90):'', cut30=curPer==='30d'?getCutoffDate(30):'';
-  const items=IT.filter(it=>{
+  if(!city&&k.length<3){LAST_FILTERED=[];host.innerHTML='<div class="panel"><p class="mute" style="margin:0">Continue digitando: preciso de pelo menos 3 letras na busca textual.</p></div>';return}
+  const cut30=QS.per==='30d'?getCutoffDate(30):'', cut90=QS.per==='90d'?getCutoffDate(90):'', cut180=QS.per==='180d'?getCutoffDate(180):'';
+  const d0c=QS.d0?QS.d0.replace(/-/g,''):'', d1c=QS.d1?QS.d1.replace(/-/g,''):'';
+  const minAge=QS.age?+QS.age:0;
+
+  let items=ALL_Q.filter(it=>{
     if(!city&&!it.n.includes(k))return false;
-    if(curPer==='2026'&&!it[3].startsWith('2026'))return false;
-    if(curPer==='2025'&&!it[3].startsWith('2025'))return false;
-    if(curPer==='90d'&&it[3]<cut90)return false;
-    if(curPer==='30d'&&it[3]<cut30)return false;
-    if(curSt&&it[9]!==curSt)return false;
-    if(curTh&&it.th!==curTh)return false;
+    if(/^\d{4}$/.test(QS.per)&&!String(it[3]||'').startsWith(QS.per))return false;
+    if(QS.per==='30d'&&it[3]<cut30)return false;
+    if(QS.per==='90d'&&it[3]<cut90)return false;
+    if(QS.per==='180d'&&it[3]<cut180)return false;
+    if(d0c&&it[3]<d0c)return false;
+    if(d1c&&it[3]>d1c)return false;
+    if(QS.st.length&&!QS.st.includes(it[9]))return false;
+    if(QS.th.length){
+      const itTh=it.th||'__none__';
+      if(!QS.th.includes(itTh))return false;
+    }
+    if(QS.cat.length&&!QS.cat.includes(it[4]))return false;
+    if(QS.tp.length&&!QS.tp.includes(it.tpCode))return false;
+    if(QS.orig.length&&!QS.orig.includes(it.orig))return false;
+    if(QS.aut.length&&!QS.aut.some(ai=>it[6].includes(+ai)))return false;
+    if(QS.part.length&&!it[6].some(ai=>V[ai]&&QS.part.includes(V[ai].part)))return false;
+    if(minAge&&daysBetween(it[3])<minAge)return false;
     return true;
   });
-  if(!items.length){host.innerHTML=`<div class="panel"><p class="mute" style="margin:0">Nada encontrado com esses filtros${q?` para “${esc(q)}”`:''}. Tente limpar os filtros de período, situação ou assunto acima.</p></div>`;return}
-  const cnt=new Map(); items.forEach(it=>it[6].forEach(a=>cnt.set(a,(cnt.get(a)||0)+1)));
-  const top=[...cnt.entries()].filter(([a])=>V[a]).sort((a,b)=>b[1]-a[1]), mx=top[0]?top[0][1]:1, th=themeCount(city?items.filter(it=>it[4]==='b'||it[4]==='c'):items).slice(0,5);
-  const reps=city?[]:(D.rep||[]).filter(g=>g.items.some(it=>it.n.includes(k))).slice(0,3);
-  host.innerHTML=`<div class="panel">
-   <div class="ph"><span class="big num">${nf(items.length)}</span><p>${city?'propostas para <b>a cidade inteira</b>':`${items.length===1?'proposta cita':'propostas citam'} <b>${esc(q.trim())}</b>`}${curTh&&THX[curTh]?` · assunto: <b>${esc(THX[curTh][1])}</b>`:''}</p></div>
-   <div class="two">
-     <div><h3>${city?'Quem mais propôs':'Quem mais pediu'}</h3><ol class="rank">${top.slice(0,5).map(([a,n])=>`<li>${av(a)}<span class="nm">${esc(V[a].ap)} <span class="mute" style="font-weight:400">· ${esc(V[a].part)}</span></span><b class="num">${nf(n)}</b><span class="br"><i style="width:${n/mx*100}%"></i></span></li>`).join('')}</ol>
-       ${top.length>5?`<p class="mute" style="font-size:13.5px;margin:10px 0 0">${city?`Os outros ${top.length-5} estão nos crachás, mais abaixo.`:`Mais ${top.length-5} vereadores também citaram.`}</p>`:''}</div>
-     ${th.length?`<div><h3>O que mais pedem (toque para filtrar)</h3><ul class="themes">${th.map(([t,n])=>`<li><span class="ti">${svg(ICON[THX[t][2]],18)}</span><button class="lnk" type="button" data-thf="${t}">${esc(THX[t][1])}</button><b class="num">${nf(n)}</b></li>`).join('')}</ul></div>`:''}
-     ${city&&D.bairros&&D.bairros.length&&D.bairrosn&&D.bairrosn.length?`<div><h3>Bairros mais citados</h3><ul class="themes">${D.bairros.slice(0,5).map((b,i)=>`<li><span class="ti">${svg(ICON.pin,18)}</span><button class="lnk" type="button" data-b="${esc(b)}">${esc(b)}</button><b class="num">${nf(D.bairrosn[i]||0)}</b></li>`).join('')}</ul></div>`:''}
-   </div>
-   ${reps.length?`<p class="h3" style="margin-top:24px">Problemas que voltam aqui</p><div class="reps">${reps.map(repHTML).join('')}</div>`:''}
-   <p class="h3" style="margin-top:24px">${city?'As propostas mais recentes':'Os pedidos mais recentes'}</p><div id="blist"></div></div>`;
-  pager($('blist'),items,true,4);
-}
-$('bq').addEventListener('input',e=>bairro(e.target.value));
-$('f-per').addEventListener('click',e=>{const b=e.target.closest('[data-per]');if(!b)return;curPer=b.dataset.per;$('f-per').querySelectorAll('.fbtn').forEach(x=>x.classList.toggle('on',x===b));bairro($('bq').value)});
-$('f-st').addEventListener('click',e=>{const b=e.target.closest('[data-st]');if(!b)return;curSt=b.dataset.st;$('f-st').querySelectorAll('.fbtn').forEach(x=>x.classList.toggle('on',x===b));bairro($('bq').value)});
-$('f-th-btn').addEventListener('click',()=>{curTh='';$('f-th').style.display='none';bairro($('bq').value)});
-document.addEventListener('click',e=>{
-  const b=e.target.closest('[data-b]');if(b){$('bq').value=b.dataset.b;bairro(b.dataset.b);$('bq').scrollIntoView({block:'start',behavior:reduce?'auto':'smooth'});return}
-  const tf=e.target.closest('[data-thf]');if(tf){curTh=tf.dataset.thf;$('f-th').style.display='';$('f-th-btn').textContent=`${THX[curTh][1]} ✕`;bairro($('bq').value)}
-});
-bairro('');
 
-/* ---------- homenagem ou trabalho ---------- */
+  if(QS.ord==='asc')items=[...items].sort((a,b)=>String(a[3]).localeCompare(String(b[3])));
+  else items=[...items].sort((a,b)=>String(b[3]).localeCompare(String(a[3])));
+  LAST_FILTERED=items;
+
+  if(!items.length){
+    host.innerHTML=`<div class="panel"><p style="margin:0 0 8px;font-weight:700">Nenhum registro encontrado para esta combinação de filtros.</p><p class="mute" style="margin:0">Dica: experimente remover um filtro específico nas etiquetas acima ou clicar em <b>Limpar filtros</b>. Lembre que o bairro é buscado por correspondência textual na ementa.</p></div>`;
+    return;
+  }
+  const cnt=new Map(); items.forEach(it=>it[6].forEach(a=>cnt.set(a,(cnt.get(a)||0)+1)));
+  const top=[...cnt.entries()].filter(([a])=>V[a]).sort((a,b)=>b[1]-a[1]), mx=top[0]?top[0][1]:1, th=themeCount(items);
+  const reps=city?[]:(D.rep||[]).filter(g=>g.items.some(it=>it.n.includes(k))).slice(0,3);
+  const matchNote=!city?`<p class="mute" style="font-size:12.5px;margin:8px 0 0">ℹ️ Correspondência textual na ementa/título para “${esc(QS.q.trim())}” (a fonte legislativa não fornece campo estruturado de bairro ou coordenadas).</p>`:'';
+  host.innerHTML=`<div class="panel">
+   <div class="ph"><span class="big num">${nf(items.length)}</span><p>${items.length===1?'registro encontrado':'registros encontrados'} ${city?'no recorte atual':'citando “<b>'+esc(QS.q.trim())+'</b>”'}</p></div>
+   ${matchNote}
+   <div class="two">
+     ${top.length?`<div><h3>Quem mais assina neste recorte</h3><ol class="rank">${top.slice(0,5).map(([a,n])=>`<li>${av(a)}<span class="nm">${esc(V[a].ap)} <span class="mute" style="font-weight:400">· ${esc(V[a].part)}</span></span><b class="num">${nf(n)}</b><span class="br"><i style="width:${n/mx*100}%"></i></span></li>`).join('')}</ol></div>`:''}
+     ${th.length?`<div><h3>Temas neste recorte (toque para adicionar)</h3><ul class="themes">${th.slice(0,8).map(([t,n])=>`<li><span class="ti">${svg(ICON[THX[t][2]],18)}</span><button class="lnk" type="button" data-thf="${t}">${esc(THX[t][1])}</button><b class="num">${nf(n)}</b></li>`).join('')}</ul></div>`:''}
+     ${city&&D.bairros&&D.bairros.length&&D.bairrosn&&D.bairrosn.length?`<div><h3>Bairros mais citados na base</h3><ul class="themes">${D.bairros.slice(0,5).map((b,i)=>`<li><span class="ti">${svg(ICON.pin,18)}</span><button class="lnk" type="button" data-b="${esc(b)}">${esc(b)}</button><b class="num">${nf(D.bairrosn[i]||0)}</b></li>`).join('')}</ul></div>`:''}
+   </div>
+   ${reps.length?`<p class="h3" style="margin-top:24px">Locais com pedidos repetidos nesta busca</p><div class="reps">${reps.map(repHTML).join('')}</div>`:''}
+   <p class="h3" style="margin-top:24px">Lista de registros (${QS.ord==='asc'?'mais antigos primeiro':'mais recentes primeiro'})</p><div id="blist"></div></div>`;
+  pager($('blist'),items,true,6);
+}
+
+$('bq').addEventListener('input',e=>{QS.q=e.target.value; runConsulta(false);});
+$('f-per').addEventListener('click',e=>{const b=e.target.closest('[data-per]');if(!b)return;QS.per=b.dataset.per;runConsulta(true);});
+if($('f-d0'))$('f-d0').addEventListener('change',e=>{QS.d0=e.target.value;QS.per='';runConsulta(true);});
+if($('f-d1'))$('f-d1').addEventListener('change',e=>{QS.d1=e.target.value;QS.per='';runConsulta(true);});
+$('f-st').addEventListener('click',e=>{
+  const b=e.target.closest('[data-st]');if(!b)return;
+  const v=b.dataset.st;
+  if(!v)QS.st=[];
+  else{const i=QS.st.indexOf(v);if(i>=0)QS.st.splice(i,1);else QS.st.push(v);}
+  runConsulta(true);
+});
+if($('f-age'))$('f-age').addEventListener('click',e=>{const b=e.target.closest('[data-age]');if(!b)return;QS.age=b.dataset.age;runConsulta(true);});
+if($('f-ord'))$('f-ord').addEventListener('change',e=>{QS.ord=e.target.value;runConsulta(true);});
+document.addEventListener('click',e=>{
+  const m=e.target.closest('[data-m]');
+  if(m){
+    const k=m.dataset.m, v=m.dataset.v, arr=QS[k];
+    const i=arr.indexOf(v); if(i>=0)arr.splice(i,1); else arr.push(v);
+    runConsulta(true); return;
+  }
+  const rm=e.target.closest('[data-rm-k]');
+  if(rm){
+    const k=rm.dataset.rmK, v=rm.dataset.rmV;
+    if(k==='q')QS.q='';
+    else if(k==='per')QS.per='';
+    else if(k==='dates'){QS.d0='';QS.d1='';}
+    else if(k==='age')QS.age='';
+    else if(Array.isArray(QS[k]))QS[k]=QS[k].filter(x=>x!==v);
+    runConsulta(true); return;
+  }
+  const b=e.target.closest('[data-b]');if(b){QS.q=b.dataset.b;runConsulta(true);$('bq').scrollIntoView({block:'start',behavior:reduce?'auto':'smooth'});return}
+  const tf=e.target.closest('[data-thf]');if(tf){const t=tf.dataset.thf;if(!QS.th.includes(t))QS.th.push(t);runConsulta(true);}
+});
+if($('btn-clear-filters'))$('btn-clear-filters').addEventListener('click',()=>{
+  Object.assign(QS,{q:'',per:'',d0:'',d1:'',st:[],th:[],cat:[],tp:[],orig:[],aut:[],part:[],age:'',ord:'desc'});
+  runConsulta(true);
+});
+if($('btn-share-q'))$('btn-share-q').addEventListener('click',async e=>{
+  syncUrlFromQS(false);
+  try{await navigator.clipboard.writeText(location.href);e.target.textContent='✅ Link copiado!';setTimeout(()=>e.target.textContent='🔗 Compartilhar consulta',2500);}
+  catch(_){prompt('Copie o link da consulta:',location.href);}
+});
+if($('btn-csv-q'))$('btn-csv-q').addEventListener('click',()=>{
+  if(!LAST_FILTERED.length){alert('Não há registros filtrados para exportar.');return;}
+  const csvSafe=s=>{
+    let t=String(s??'').replace(/\r?\n/g,' ').trim();
+    if(/^[=+\-@\t\r]/.test(t))t="'"+t;
+    return '"'+t.replace(/"/g,'""')+'"';
+  };
+  const perDesc=QS.per||(QS.d0||QS.d1?`${QS.d0||'inicio'}_${QS.d1||'fim'}`:'todo_mandato');
+  const cols=['Cidade','Periodo_Filtro','Data_Coleta','Identificacao','Tipo_Codigo','Data','Origem','Autores','Partidos_Legislatura','Categoria_Editorial','Tema','Situacao_Legislativa','Execucao_Atendimento','Ementa','Link_Oficial'];
+  const lines=[cols.join(';')];
+  LAST_FILTERED.forEach(it=>{
+    const auts=it.isExec?['Poder Executivo']:it[6].map(ai=>V[ai]?V[ai].ap:'').filter(Boolean);
+    const parts=it.isExec?[(D.pref&&D.pref.part)||'']:it[6].map(ai=>V[ai]?V[ai].part:'').filter(Boolean);
+    const catLbl=CAT[it[4]]?CAT[it[4]][0]:'Outro';
+    const thLbl=THX[it.th]?THX[it.th][1]:'Sem classificação';
+    const sitLeg=it[5]||(it[9]==='p'?'Encaminhada / Aguardando resposta':it[9]==='a'?'Concluída':'Em tramitação');
+    const execLbl=String(it[5]||'').toLowerCase().includes('respondid')?'Resposta oficial registrada':'Execução não verificada por este portal';
+    lines.push([CIDADE,perDesc,D.ger,it[1],it.tpCode,dt(it[3]),it.isExec?'Executivo':'Vereadores',auts.join(' / '),[...new Set(parts)].join(' / '),catLbl,thLbl,sitLeg,execLbl,it[2],procHref(it[0],it[10])].map(csvSafe).join(';'));
+  });
+  const blob=new Blob(['\uFEFF'+lines.join('\n')],{type:'text/csv;charset=utf-8;'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download=`radar-${norm(CIDADE).replace(/\s+/g,'-')}-${D.ger}.csv`; a.click();
+});
+window.addEventListener('popstate',()=>{loadQSFromUrl();runConsulta(false);});
+loadQSFromUrl(); runConsulta(false);
+
+/* ---------- classificação das proposições ---------- */
 const tot=ORDER.reduce((s,c)=>s+(D.catot[c]||0),0);
-$('hsub').textContent=tot?`São ${nf(tot)} propostas classificadas até agora. Toque em um grupo para ler cada uma.`:`Classificação determinística em 5 grupos fixos assim que as proposições forem sincronizadas.`;
+$('hsub').textContent=tot?`${nf(tot)} proposições classificadas deterministicamente. Toque em um grupo para abrir a lista completa.`:`Classificação determinística em 5 categorias indisponível enquanto não houver proposições coletadas.`;
 $('split').innerHTML=ORDER.map(c=>`<i class="k-${c}" style="flex:${(D.catot[c]||0)||(tot?0:1)} 1 0"></i>`).join('');
-$('cats').innerHTML=ORDER.map(c=>`<button class="cat k-${c}" type="button" data-c="${c}" ${tot?'':'disabled'}><span class="ci">${svg(ICON[CAT[c][2]],26)}</span><span class="cv num">${nf(D.catot[c]||0)}</span><span class="cn">${CAT[c][0]} <span class="now">até agora</span></span><span class="cd">${CAT[c][1]}</span><span class="go">${tot?'Ver todas →':'Aguardando sincronização'}</span></button>`).join('');
+$('cats').innerHTML=ORDER.map(c=>`<button class="cat k-${c}" type="button" data-c="${c}" ${tot?'':'disabled'}><span class="ci">${svg(ICON[CAT[c][2]],26)}</span><span class="cv num">${tot?nf(D.catot[c]||0):'Indisp.'}</span><span class="cn">${CAT[c][0]}</span><span class="cd">${CAT[c][1]}</span><span class="go">${tot?'Ver todas →':'Dado indisponível'}</span></button>`).join('');
 $('cats').addEventListener('click',e=>{const b=e.target.closest('[data-c]');if(b&&!b.disabled)openCat(b.dataset.c,null)});
 
 /* ---------- modo leitura rápida (manchetes) vs versão completa ---------- */
@@ -967,16 +1359,16 @@ const minSpender=posSpenders.length>1?posSpenders[posSpenders.length-1]:null;
     const candTxt=cand26.length?`Em 2026, ${cand26.length} ${cand26.length===1?'tentou':'tentaram'} virar Deputado gastando ${fmtMil(totGasto26)}.`:`Nenhum vereador titular saiu candidato a deputado em 2026.`;
     if(totAll>0){
       const card2Val=cobPend>0?nf(cobPend):nf(cobTot);
-      const card2Lbl=cobPend>0?'cobranças à Prefeitura estão sem resposta no prazo':'requerimentos e cobranças de fiscalização enviados';
-      const card2Sub=cobPend>0?'Requerimentos de fiscalização enviados pelos vereadores que aguardam resposta do Executivo.':'Pedidos formais de informação, fiscalização de contratos e questionamentos ao Executivo.';
+      const card2Lbl=cobPend>0?'pedidos de fiscalização sem resposta registrada':'requerimentos e cobranças de fiscalização';
+      const card2Sub=cobPend>0?'Requerimentos de fiscalização sem registro de resposta do Executivo na fonte legislativa (não implica descumprimento automático de prazo).':'Pedidos formais de informação, fiscalização de contratos e questionamentos ao Executivo.';
       hlHost.innerHTML=`
         <span class="hk">Resumo em 10 segundos · Dados oficiais da Câmara e do TSE</span>
-        <h2>O que os ${V.length} vereadores e o prefeito de ${esc(CIDADE)} <mark>realmente fazem</mark> com o seu voto.</h2>
+        <h2>O que os ${V.length} vereadores e o prefeito de ${esc(CIDADE)} <mark>registraram</mark> nas fontes oficiais.</h2>
         <div class="hl-grid num">
           <div class="hl-card">
             <b class="bad">${pctHom}%</b>
-            <strong>de tudo que a Câmara propõe é só homenagem</strong>
-            <span>São ${nf(D.catot.h||0)} moções de aplauso, votos de pesar, títulos e nomes de rua em ${nf(totAll)} propostas.</span>
+            <strong>das proposições são homenagens</strong>
+            <span>São ${nf(D.catot.h||0)} moções de aplauso, votos de pesar, títulos e nomes de rua em ${nf(totAll)} proposições.</span>
           </div>
           <div class="hl-card">
             <b class="warn">${card2Val}</b>
@@ -985,7 +1377,7 @@ const minSpender=posSpenders.length>1?posSpenders[posSpenders.length-1]:null;
           </div>
           <div class="hl-card">
             <b>${fmtMil(totGasto24)}</b>
-            <strong>gastos pelos ${V.length} eleitos na campanha de 2024</strong>
+            <strong>gastos declarados pelos ${V.length} eleitos em 2024</strong>
             <span>${rangeTxt}${candTxt}</span>
           </div>
         </div>`;
@@ -1038,7 +1430,7 @@ const minSpender=posSpenders.length>1?posSpenders[posSpenders.length-1]:null;
       const tSes=v.P+v.A+v.F;
       const pPres=tSes?Math.round(v.P/tSes*100):null;
       if(m==='bairro'){
-        return `Olá, Vereador(a) ${v.ap}. Sou morador(a) de ${CIDADE} (${b}) e acompanho seu mandato pelo painel Radar ${CIDADE}.\n\nGostaria de solicitar que seu gabinete protocole um Requerimento de Informação oficial à Prefeitura (e não apenas uma Indicação simples) cobrando o cronograma e a solução para o problema em ${b}, já que a Lei Orgânica obriga o Executivo a responder formalmente aos Requerimentos aprovados pela Câmara.\n\nAguardo retorno com o número do protocolo. Obrigado(a)!\nDados consultados em: ${SITE}`;
+        return `Olá, Vereador(a) ${v.ap}. Sou morador(a) de ${CIDADE} (${b}) e acompanho as proposições pelo painel Radar ${CIDADE}.\n\nGostaria de solicitar que seu gabinete protocole um Requerimento de Informação oficial à Prefeitura (além de Indicação) perguntando sobre a resposta, o andamento e eventual previsão de atendimento para a demanda em ${b}.\n\nAguardo retorno com o número do protocolo. Obrigado(a)!\nDados consultados em: ${SITE}`;
       }
       if(m==='leis'){
         const trecho=totP?`: de ${nf(totP)} proposições apresentadas, foram ${nf(v.cat.h)} homenagens contra ${nf(v.cat.l)} projetos de lei e ${nf(v.cat.c)} cobranças de fiscalização`:'';
@@ -1136,12 +1528,15 @@ function openTSE(vi){
   const v=vi==='pref'?D.pref:V[vi];
   const nome=vi==='pref'?`Prefeito ${v.nome}`:v.ap;
   const hist=v.hist_tse||[];
-  openSheet('l','law',`Campanhas e Gastos no TSE — ${nome}`,`Histórico oficial de candidaturas e prestação de contas eleitorais (2012–2026)`);
+  const v24=vi==='pref'?(v.votos_2t||v.votos_1t||0):(v.votos||0);
+  const cpvTxt=v24>0&&v.cpv24?`${fmtBRL(v.cpv24)} por voto (fórmula: despesa contratada ÷ ${nf(v24)} votos)`:'Não calculável (sem registro de votos nominal)';
+  openSheet('l','law',`Campanhas e Gastos no TSE — ${nome}`,`Histórico oficial de candidaturas e prestação de contas eleitorais (2012–2026) · Valores nominais sem correção monetária`);
   $('sh-b').innerHTML=`
     <div class="panel" style="margin:0 0 16px">
       <div class="ph"><span class="big num" style="font-size:clamp(34px,8vw,52px)">${fmtBRL(v.gasto24||0)}</span>
-        <p>gastos declarados na <b>campanha de 2024</b> · Custo de <b>${fmtBRL(v.cpv24||0)} por voto</b> (Receita: ${fmtBRL(v.rec24||0)})</p>
+        <p>despesa contratada na <b>campanha de 2024</b> · Custo por voto: <b>${cpvTxt}</b> (Receita: ${fmtBRL(v.rec24||0)})</p>
       </div>
+      <p class="mute" style="font-size:12.5px;margin:8px 0 0">Recursos de campanha eleitoral são distintos de subsídio/salário do cargo, verba de gabinete e orçamento da Prefeitura. Despesas pagas não são separadas na base consolidada.</p>
     </div>
     <p class="h3">Todas as candidaturas registradas no TSE (${hist.length})</p>
     <ul class="items">
@@ -1151,13 +1546,81 @@ function openTSE(vi){
           <p class="tx">Eleições ${c.ano} — Candidato(a) a <b>${esc(c.cargo)}</b> (${esc(c.part)})</p>
           <div class="mt">
             ${stt(c.sit)}
-            <span>Despesa declarada: <b>${c.desp?fmtBRL(c.desp):'Sem registro detalhado na base'}</b></span>
-            ${c.rec?`<span>·</span><span>Receita: <b>${fmtBRL(c.rec)}</b></span>`:''}
+            <span>Despesa contratada: <b>${c.ano>=2018?(c.desp?fmtBRL(c.desp):'R$ 0,00'):'Indisponível (TSE detalhado a partir de 2018)'}</b></span>
+            ${c.ano>=2018?`<span>·</span><span>Receita: <b>${c.rec?fmtBRL(c.rec):'R$ 0,00'}</b></span>`:''}
           </div>
         </div>
       </li>`).join('')}
     </ul>`;
 }
+(function initTseExplorer(){
+  const host=$('te-res'); if(!host)return;
+  const rows=[];
+  V.forEach((v,idx)=>{
+    (v.hist_tse||[]).forEach(h=>{
+      const is24=h.ano===2024&&norm(h.cargo).includes('vereador');
+      rows.push({cand:v.ap,vi:idx,ano:h.ano,cargo:h.cargo,part:h.part||'',sit:h.sit||'',rec:h.rec||0,desp:h.desp||0,cpv:(is24&&v.votos>0)?v.cpv24:null,votos:is24?v.votos:null});
+    });
+  });
+  if(D.pref){
+    (D.pref.hist_tse||[]).forEach(h=>{
+      const is24=h.ano===2024&&norm(h.cargo).includes('prefeit');
+      const v24=D.pref.votos_2t||D.pref.votos_1t||0;
+      rows.push({cand:'Prefeito '+D.pref.nome,vi:'pref',ano:h.ano,cargo:h.cargo,part:h.part||'',sit:h.sit||'',rec:h.rec||0,desp:h.desp||0,cpv:(is24&&v24>0)?D.pref.cpv24:null,votos:is24?v24:null});
+    });
+  }
+  const fillSel=(id,vals,lbl0)=>{
+    const el=$(id); if(!el)return;
+    el.innerHTML=`<option value="">${lbl0}</option>`+vals.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');
+  };
+  fillSel('te-ano',[...new Set(rows.map(r=>r.ano))].sort((a,b)=>b-a),'Todos os anos');
+  fillSel('te-cargo',[...new Set(rows.map(r=>r.cargo))].sort((a,b)=>a.localeCompare(b,'pt')),'Todos os cargos');
+  fillSel('te-cand',[...new Set(rows.map(r=>r.cand))].sort((a,b)=>a.localeCompare(b,'pt')),'Todos os candidatos');
+  fillSel('te-part',[...new Set(rows.map(r=>r.part).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt')),'Todos os partidos');
+  fillSel('te-sit',[...new Set(rows.map(r=>r.sit).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt')),'Todos os resultados');
+  const inRange=(val,rng)=>{
+    if(!rng)return true;
+    if(rng==='0-10000')return val<=10000;
+    if(rng==='10000-50000')return val>10000&&val<=50000;
+    if(rng==='50000-200000')return val>50000&&val<=200000;
+    if(rng==='200000+')return val>200000;
+    if(rng==='0-10')return val!==null&&val<=10;
+    if(rng==='10-30')return val!==null&&val>10&&val<=30;
+    if(rng==='30+')return val!==null&&val>30;
+    return true;
+  };
+  function drawTse(){
+    const fAno=$('te-ano').value, fCargo=$('te-cargo').value, fCand=$('te-cand').value, fPart=$('te-part').value, fSit=$('te-sit').value, fRec=$('te-rec').value, fDesp=$('te-desp').value, fCpv=$('te-cpv').value;
+    const filt=rows.filter(r=>{
+      if(fAno&&String(r.ano)!==fAno)return false;
+      if(fCargo&&r.cargo!==fCargo)return false;
+      if(fCand&&r.cand!==fCand)return false;
+      if(fPart&&r.part!==fPart)return false;
+      if(fSit&&r.sit!==fSit)return false;
+      if(!inRange(r.rec,fRec))return false;
+      if(!inRange(r.desp,fDesp))return false;
+      if(fCpv&&!inRange(r.cpv,fCpv))return false;
+      return true;
+    }).sort((a,b)=>(b.ano-a.ano)||(b.desp-a.desp));
+    if(!filt.length){host.innerHTML='<p class="mute" style="margin:8px 0 0">Nenhuma candidatura encontrada para essa combinação de filtros.</p>';return;}
+    const showLim=30;
+    host.innerHTML=`<p class="mute" style="font-size:13px;margin:0 0 8px"><b>${nf(filt.length)}</b> registros encontrados (exibindo até ${Math.min(showLim,filt.length)}):</p>
+      <div class="tse-table-wrap"><table class="tse-table num">
+        <thead><tr><th>Ano</th><th>Candidato</th><th>Cargo</th><th>Partido</th><th>Resultado</th><th>Receita</th><th>Despesa contratada</th><th>Custo/voto (2024)</th></tr></thead>
+        <tbody>${filt.slice(0,showLim).map(r=>`<tr>
+          <td><b>${r.ano}</b></td>
+          <td><button class="lnk" type="button" data-tse="${r.vi}">${esc(r.cand)}</button></td>
+          <td>${esc(r.cargo)}</td><td>${esc(r.part)}</td><td>${stt(r.sit)}</td>
+          <td>${r.ano>=2018?fmtBRL(r.rec):'Indisp.'}</td>
+          <td>${r.ano>=2018?fmtBRL(r.desp):'Indisp.'}</td>
+          <td>${r.cpv!==null?fmtBRL(r.cpv):(r.ano===2024?'Não calculável':'—')}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>`;
+    host.onclick=e=>{const b=e.target.closest('[data-tse]');if(b)openTSE(b.dataset.tse==='pref'?'pref':+b.dataset.tse)};
+  }
+  ['te-ano','te-cargo','te-cand','te-part','te-sit','te-rec','te-desp','te-cpv'].forEach(id=>$(id)&&$(id).addEventListener('change',drawTse));
+  drawTse();
+})();
 function badge(v){
   const i=V.indexOf(v), t=v.P+v.A+v.F, h=hue(i), semChamada=t?Math.max(0,(D.sess||[]).length-t):0;
   const g24=v.gasto24||0, cpv=v.cpv24||0;
@@ -1429,18 +1892,39 @@ try{
 
 try{
   const R=D.rachas||[];
-  $('rsub').textContent=D.nvot?`De ${nf(D.nvot)} votações nominais em plenário, ${nf(D.unan)} foram unânimes e ${nf(R.length)} tiveram divisão entre os vereadores. Toque em qualquer votação para ver quem votou Sim, Não e Abstenção.`:`Sem votações nominais divididas disponíveis em formato aberto no momento.`;
-  let rf='all', shown=9;
+  $('rsub').textContent=D.nvot?`De ${nf(D.nvot)} votações nominais estruturadas, ${nf(D.unan)} foram unânimes e ${nf(R.length)} tiveram divisão entre os vereadores. Apenas votações divididas têm detalhamento nominal armazenado abaixo; estados não registrados não são convertidos em ausência ou abstenção.`:`Esta Câmara não disponibilizou listagens estruturadas abertas de votações nominais individuais (isso não significa ausência de votações em plenário).`;
+  if($('r-ver'))$('r-ver').innerHTML='<option value="">Qualquer vereador</option>'+V.map((v,i)=>`<option value="${i}">${esc(v.ap)} (${esc(v.part)})</option>`).join('');
+  let shown=9;
   const host=$('rachas');
   function drawR(){
+    const q=norm(($('r-q')?$('r-q').value:'').trim());
+    const per=$('r-per')?$('r-per').value:'';
+    const orig=$('r-orig')?$('r-orig').value:'';
+    const res=$('r-res')?$('r-res').value:'';
+    const ver=$('r-ver')?$('r-ver').value:'';
+    const pos=$('r-pos')?$('r-pos').value:'';
     const filtered=R.filter(r=>{
-      if(rf==='pref')return r.pref===1;
-      if(rf==='ver')return r.pref===0;
-      if(rf==='rej')return /rejeitad|derrubad/i.test(r.res);
+      if(q&&!norm(r.t+' '+r.e+' '+r.aut).includes(q))return false;
+      if(per&&!String(r.d||'').startsWith(per))return false;
+      if(orig==='pref'&&r.pref!==1)return false;
+      if(orig==='ver'&&r.pref!==0)return false;
+      if(res==='aprov'&&!/aprovad|mantid/i.test(r.res))return false;
+      if(res==='rej'&&!/rejeitad|derrubad/i.test(r.res))return false;
+      if(ver!==''){
+        const vi=+ver;
+        if(pos==='S'&&!r.s.includes(vi))return false;
+        if(pos==='N'&&!r.n.includes(vi))return false;
+        if(pos==='A'&&!r.a.includes(vi))return false;
+        if(!pos&&!(r.s.includes(vi)||r.n.includes(vi)||r.a.includes(vi)))return false;
+      }else if(pos){
+        if(pos==='S'&&!r.s.length)return false;
+        if(pos==='N'&&!r.n.length)return false;
+        if(pos==='A'&&!r.a.length)return false;
+      }
       return true;
     });
     if(!filtered.length){
-      host.innerHTML='<div class="panel" style="grid-column:1/-1;margin-top:0"><p class="mute" style="margin:0">Nenhuma votação nominal dividida neste filtro.</p></div>';
+      host.innerHTML='<div class="panel" style="grid-column:1/-1;margin-top:0"><p class="mute" style="margin:0">'+(R.length?'Nenhuma votação dividida encontrada com esses filtros.':'Sem votações nominais divididas disponíveis em formato aberto para esta cidade.')+'</p></div>';
       return;
     }
     const slice=filtered.slice(0,shown);
@@ -1466,7 +1950,9 @@ try{
     const rm=$('rmore');
     if(rm)rm.onclick=()=>{shown+=12;drawR()};
   }
-  $('rchips').onclick=e=>{const b=e.target.closest('[data-rf]');if(!b)return;rf=b.dataset.rf;shown=9;$('rchips').querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===b));drawR()};
+  ['r-q','r-per','r-orig','r-res','r-ver','r-pos'].forEach(id=>{
+    const el=$(id); if(el)el.addEventListener(id==='r-q'?'input':'change',()=>{shown=9;drawR()});
+  });
   host.onclick=e=>{const b=e.target.closest('[data-ri]');if(b)openVoteDetail(R[+b.dataset.ri])};
   drawR();
 }catch(e){console.error(e)}
@@ -1492,13 +1978,25 @@ try{
         </div></div></li>`;
     }).join('')+'</ul>':'<p class="mute">Nenhuma divergência registrada nas votações em que ambos participaram.</p>';
   }
-  const ca=$('ca'), cb=$('cb');
+  const ca=$('ca'), cb=$('cb'), compPer=$('comp-per');
   const opts=V.map((v,i)=>`<option value="${i}">${esc(v.ap)} (${esc(v.part)})</option>`).join('');
   ca.innerHTML=opts; cb.innerHTML=opts;
   ca.value='0'; cb.value=String(Math.min(1,V.length-1));
   function drawComp(){
-    const ia=+ca.value, ib=+cb.value, va=V[ia], vb=V[ib];
-    const [same,comm]=(D.vmat&&D.vmat[ia]&&D.vmat[ia][ib])||[0,0];
+    const ia=+ca.value, ib=+cb.value, va=V[ia], vb=V[ib], per=compPer?compPer.value:'';
+    let same=0, comm=0, denomNote='';
+    if(!per){
+      const pair=(D.vmat&&D.vmat[ia]&&D.vmat[ia][ib])||[0,0];
+      same=pair[0]; comm=pair[1];
+      denomNote='todas as votações nominais em que ambos registraram Sim, Não ou Abstenção';
+    }else{
+      (D.rachas||[]).filter(r=>String(r.d||'').startsWith(per)).forEach(r=>{
+        const ga=r.s.includes(ia)?'S':r.n.includes(ia)?'N':r.a.includes(ia)?'A':'';
+        const gb=r.s.includes(ib)?'S':r.n.includes(ib)?'N':r.a.includes(ib)?'A':'';
+        if(ga&&gb){comm++; if(ga===gb)same++;}
+      });
+      denomNote=`votações divididas de ${per} em que ambos votaram (unânimes não são detalhadas por ano)`;
+    }
     const diff=comm-same, pctSame=comm?Math.round(same/comm*100):0;
     const ta=va.P+va.A+va.F, tb=vb.P+vb.A+vb.F;
     const pa=ta?Math.round(va.P/ta*100):0, pb=tb?Math.round(vb.P/tb*100):0;
@@ -1515,27 +2013,28 @@ try{
       </div>
       ${ia===ib?'<p class="mute" style="text-align:center;margin:0">Escolha dois vereadores diferentes acima para comparar lado a lado.</p>':`
       <div class="comp-agree num">
-        <div><b>${comm?`${pctSame}% de concordância em plenário`:'Comparativo parlamentar e eleitoral'}</b><div style="font-size:13.5px;color:var(--mute)">${comm?`Votaram igual em <b>${nf(same)}</b> de <b>${nf(comm)}</b> votações nominais em que ambos votaram (${nf(diff)} divergências)`:'Compare gastos de campanha, votos recebidos e atuação legislativa'}</div></div>
-        ${diff>0?`<button class="btn" type="button" id="btn-diff" style="padding:10px 14px;font-size:13.5px">Ver as ${nf(diff)} divergências →</button>`:''}
+        <div><b>${comm?`${pctSame}% de concordância (${nf(comm)} votações comparáveis)`:'Comparativo parlamentar e eleitoral'}</b><div style="font-size:13.5px;color:var(--mute)">${comm?`Votaram igual em <b>${nf(same)}</b> de <b>${nf(comm)}</b> (${denomNote}). Concordância de voto não comprova acordo político nem se confunde com alinhamento ao Executivo.`:'Compare gastos de campanha, votos recebidos e proposições registradas'}</div></div>
+        ${diff>0?`<button class="btn" type="button" id="btn-diff" style="padding:10px 14px;font-size:13.5px">Ver divergências →</button>`:''}
       </div>
       <div class="comp-rows">
         ${row('Tempo como vereador',va.mand_txt||'1º mandato',vb.mand_txt||'1º mandato',va.mand||1,vb.mand||1,true)}
-        ${ta||tb?row('Presença nas sessões',ta?`${pa}% (${va.P} pres. / ${va.F} faltas)`:'—',tb?`${pb}% (${vb.P} pres. / ${vb.F} faltas)`:'—',pa,pb,true):''}
-        ${(va.alin_t||vb.alin_t)?row('Alinhamento com o Prefeito',va.alin_t?`${va.alin}% (${va.alin_s}/${va.alin_t})`:'Mesa / Sem voto',vb.alin_t?`${vb.alin}% (${vb.alin_s}/${vb.alin_t})`:'Mesa / Sem voto',va.alin||0,vb.alin||0,true):''}
-        ${row('Leis e normas em vigor (total)',`${nf(va.leis_tot||0)} (${nf(va.leis_ord||0)} leis)`,`${nf(vb.leis_tot||0)} (${nf(vb.leis_ord||0)} leis)`,va.leis_tot||0,vb.leis_tot||0,true)}
-        ${row('Total de propostas (2025–2026)',nf(totA),nf(totB),totA,totB,true)}
+        ${ta||tb?row('Presença nas sessões',ta?`${pa}% (${va.P} pres. / ${va.F} faltas)`:'Indisp.',tb?`${pb}% (${vb.P} pres. / ${vb.F} faltas)`:'Indisp.',pa,pb,true):''}
+        ${(va.alin_t||vb.alin_t)?row('Alinhamento com o Executivo',va.alin_t?`${va.alin}% (${va.alin_s}/${va.alin_t})`:'Mesa / Sem voto',vb.alin_t?`${vb.alin}% (${vb.alin_s}/${vb.alin_t})`:'Mesa / Sem voto',va.alin||0,vb.alin||0,true):''}
+        ${row('Normas em vigor (total)',`${nf(va.leis_tot||0)} (${nf(va.leis_ord||0)} leis)`,`${nf(vb.leis_tot||0)} (${nf(vb.leis_ord||0)} leis)`,va.leis_tot||0,vb.leis_tot||0,true)}
+        ${row('Total de proposições (2025–2026)',nf(totA),nf(totB),totA,totB,true)}
         ${row('Propostas de lei (2025–2026)',nf(va.cat.l),nf(vb.cat.l),va.cat.l,vb.cat.l,true)}
-        ${row('Perguntas e cobranças à Prefeitura',nf(va.cat.c),nf(vb.cat.c),va.cat.c,vb.cat.c,true)}
-        ${row('Pedidos de melhoria nos bairros',nf(va.cat.b),nf(vb.cat.b),va.cat.b,vb.cat.b,true)}
+        ${row('Fiscalização e cobranças',nf(va.cat.c),nf(vb.cat.c),va.cat.c,vb.cat.c,true)}
+        ${row('Melhorias nos bairros',nf(va.cat.b),nf(vb.cat.b),va.cat.b,vb.cat.b,true)}
         ${row('Homenagens',nf(va.cat.h),nf(vb.cat.h),va.cat.h,vb.cat.h,false)}
         ${row('Votos na eleição de 2024',nf(va.votos),nf(vb.votos),va.votos,vb.votos,true)}
-        ${row('Gasto na campanha de 2024 (TSE)',fmtBRL(va.gasto24||0),fmtBRL(vb.gasto24||0),va.gasto24||0,vb.gasto24||0,false)}
-        ${row('Custo por voto em 2024 (TSE)',fmtBRL(va.cpv24||0),fmtBRL(vb.cpv24||0),va.cpv24||0,vb.cpv24||0,false)}
+        ${row('Despesa contratada em 2024 (TSE)',fmtBRL(va.gasto24||0),fmtBRL(vb.gasto24||0),va.gasto24||0,vb.gasto24||0,false)}
+        ${row('Custo por voto em 2024 (TSE)',va.votos>0?fmtBRL(va.cpv24||0):'Não calculável',vb.votos>0?fmtBRL(vb.cpv24||0):'Não calculável',va.cpv24||0,vb.cpv24||0,false)}
       </div>`}`;
     const bd=$('btn-diff');
     if(bd)bd.onclick=()=>openDiffVotes(ia,ib);
   }
   ca.addEventListener('change',drawComp); cb.addEventListener('change',drawComp);
+  if(compPer)compPer.addEventListener('change',drawComp);
   window.compareWith=i=>{
     ca.value=String(i);
     if(+cb.value===i)cb.value=i===0?'1':'0';

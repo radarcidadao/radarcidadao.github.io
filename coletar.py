@@ -221,7 +221,7 @@ def build_root_hub():
         host_clean,
         tot_ver,
         (f"{len(summaries)} Cidades", f"{tot_ver} vereadores + 8 prefeitos", "Vale do Paraíba e Capital Paulista"),
-        (nf(tot_props), "proposições analisadas", "Separadas entre trabalho real e homenagens"),
+        (nf(tot_props), "proposições analisadas", "Classificadas por categoria, tema e situação"),
         (fmt_mil(tot_gasto24), "gastos na eleição 2024", "Cruzamento oficial com o TSE (2012–2026)"),
         (f"{tot_cand26} vereadores", "candidatos a Deputado 2026", f"Gastaram {fmt_mil(tot_gasto26)} no meio do mandato"),
         is_hub=True,
@@ -232,6 +232,7 @@ def build_root_hub():
 def main():
     args = sys.argv[1:]
     force_live = "--forcar-live" in args
+    only_html = "--apenas-html" in args
     target_slugs = []
     for i, a in enumerate(args):
         if a == "--cidade" and i + 1 < len(args):
@@ -243,7 +244,15 @@ def main():
     for slug in target_slugs:
         if slug not in CIDADES:
             raise ValueError(f"Cidade desconhecida: {slug}. Opções: {list(CIDADES.keys())}")
-        collect_and_build_city(slug, force_live=force_live)
+        if only_html:
+            city_dir = os.path.join(ROOT_DIR, slug)
+            rx = load_rx(city_dir)
+            html_str = build_city_index_html(slug, rx, CIDADES[slug])
+            with open(os.path.join(city_dir, "index.html"), "w", encoding="utf-8") as f:
+                f.write(html_str)
+            print(f"  [HTML OK] {slug}/index.html regenerado a partir de dados.js")
+        else:
+            collect_and_build_city(slug, force_live=force_live)
 
     build_root_hub()
 
