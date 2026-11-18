@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Cidadão — Transparência Legislativa e Eleitoral (Vale do Paraíba + São Paulo)</title>
+<meta name="description" content="Portais independentes e automatizados de fiscalização das Câmaras Municipais e Prefeitos no Vale do Paraíba e na Capital de São Paulo (dados oficiais Câmaras + TSE 2012–2026).">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://radarcidadao.github.io/">
+<meta property="og:title" content="Radar Cidadão — Vale do Paraíba + São Paulo Capital sob lupa diária">
+<meta property="og:description" content="155 vereadores e 8 prefeitos monitorados: 58.302 proposições, gastos de campanha no TSE (R$ 74,48 mi em 2024) e comparador de votos.">
+<meta property="og:image" content="https://radarcidadao.github.io/card-whatsapp.jpg">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1080">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://radarcidadao.github.io/card-whatsapp.jpg">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ffffff; --ink:#0f1720; --mute:#5b6875; --hair:#e6eaee; --soft:#f5f7f9;
+  --b:#1d5fe0; --b-t:#eaf1ff; --c:#c84b31; --ok:#0a8a5f;
+  --shadow:0 1px 2px rgba(15,23,32,.05),0 8px 24px -12px rgba(15,23,32,.14);
+  --display:"Bricolage Grotesque","Public Sans",system-ui,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+.num{font-variant-numeric:tabular-nums}
+.city-bar{display:flex;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid var(--hair);overflow-x:auto;scrollbar-width:none}
+.city-bar::-webkit-scrollbar{display:none}
+.cb-lbl{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);white-space:nowrap}
+.cb-list{display:flex;gap:6px}
+.cbtn{white-space:nowrap;text-decoration:none;font-size:13px;font-weight:700;color:var(--ink);background:var(--soft);border:1px solid var(--hair);border-radius:999px;padding:5px 11px}
+.cbtn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.cbtn small{font-weight:400;opacity:.75}
+header{padding:28px 0 18px}
+h1{margin:10px 0 12px}
+h1 img{width:min(100%,390px);height:auto}
+.lede{font-size:clamp(18px,2.5vw,22px);max-width:54ch;margin:0 0 20px}
+.hero-hl{background:var(--paper);border:2px solid var(--ink);border-radius:20px;padding:22px 24px;margin:12px 0 28px;box-shadow:0 5px 0 var(--ink)}
+.hk{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c);display:block;margin-bottom:6px}
+.hero-hl h2{font-family:var(--display);font-size:clamp(26px,4.2vw,36px);line-height:1.08;margin:0 0 16px}
+.hl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.hl-card{background:#faf6f0;border:1.5px solid var(--hair);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.hl-card b{font-family:var(--display);font-weight:800;font-size:34px;line-height:1}
+.hl-card strong{font-size:15px}
+.hl-card span{font-size:13px;color:var(--mute)}
+.hgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-bottom:40px}
+.hcard{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit;background:var(--paper);border:1.5px solid var(--hair);border-radius:22px;padding:20px;box-shadow:var(--shadow);transition:transform .15s,border-color .15s}
+.hcard:hover{transform:translateY(-3px);border-color:var(--ink)}
+.hc-top{display:flex;flex-wrap:wrap;gap:6px}
+.pill{background:var(--ink);color:#fff;border-radius:6px;padding:3px 8px;font-weight:700;font-size:12px}
+.pill.r{background:var(--soft);color:var(--ink)}
+.hcard h3{font-family:var(--display);font-weight:800;font-size:26px;margin:2px 0 0;line-height:1.05}
+.hc-sub{margin:0;font-size:14px;color:var(--mute);min-height:40px}
+.hc-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:10px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.hc-nums b{font-family:var(--display);font-weight:800;font-size:15.5px;display:block}
+.hc-nums span{font-size:11px;color:var(--mute);text-transform:uppercase;font-weight:700}
+.hc-go{font-weight:700;font-size:14.5px;color:var(--b);margin-top:auto}
+footer{padding:24px 0 46px;border-top:1px solid var(--hair);color:var(--mute);font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="city-bar" id="city-bar" aria-label="Selecionar cidade"><span class="cb-lbl">📍 Cidade:</span><div class="cb-list"><a class="cbtn on" href="./">🌎 Todas as Cidades (8)</a><a class="cbtn" href="./sp/">São Paulo <small>(55)</small></a><a class="cbtn" href="./sjc/">São José dos Campos <small>(21)</small></a><a class="cbtn" href="./taubate/">Taubaté <small>(19)</small></a><a class="cbtn" href="./caraguatatuba/">Caraguatatuba <small>(15)</small></a><a class="cbtn" href="./jacarei/">Jacareí <small>(13)</small></a><a class="cbtn" href="./pindamonhangaba/">Pindamonhangaba <small>(11)</small></a><a class="cbtn" href="./guaratingueta/">Guaratinguetá <small>(11)</small></a><a class="cbtn" href="./cacapava/">Caçapava <small>(10)</small></a></div></nav>
+  <header>
+    <h1><img src="logo.png" alt="Radar Cidadão" width="1000" height="380"></h1>
+    <p class="lede"><b>Fiscalização legislativa e eleitoral independente.</b> Escolha uma cidade abaixo para consultar pedidos no seu bairro, leis reais vs. homenagens, votações nominais, alinhamento com o Prefeito e gastos de campanha no TSE (2012–2026).</p>
+    <div class="hero-hl num">
+      <span class="hk">8 Cidades Monitoradas · Mandato 2025–2028</span>
+      <h2>Vale do Paraíba e Capital Paulista com dados 100% oficiais e abertos.</h2>
+      <div class="hl-grid">
+        <div class="hl-card">
+          <b>155</b>
+          <strong>vereadores + 8 prefeitos acompanhados</strong>
+          <span>São Paulo (55), SJC (21), Taubaté (19), Caraguatatuba (15), Jacareí (13), Pinda (11), Guará (11) e Caçapava (10).</span>
+        </div>
+        <div class="hl-card">
+          <b>58.302</b>
+          <strong>proposições classificadas por bairro e tema</strong>
+          <span>Separadas automaticamente entre melhorias nos bairros, cobranças, homenagens e projetos de lei.</span>
+        </div>
+        <div class="hl-card">
+          <b>R$ 74,48 mi</b>
+          <strong>gastos nas campanhas dos vereadores eleitos em 2024</strong>
+          <span>Em 2026, 45 vereadores disputaram vaga de Deputado gastando R$ 54,47 mi no meio do mandato.</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="hgrid">
+      <a class="hcard" href="sp/">
+        <div class="hc-top">
+          <span class="pill">55 vereadores</span>
+          <span class="pill r">Prefeito Ricardo Nunes (MDB)</span>
+        </div>
+        <h3>Radar São Paulo</h3>
+        <p class="hc-sub"><b>7.636</b> proposições (21% homenagens · 1.697 projetos de lei) · <b>110</b> votações nominais</p>
+        <div class="hc-nums num">
+          <div><b>R$ 69,80 mi</b><span>Campanhas 2024 (TSE)</span></div>
+          <div><b>25 (R$ 46,57 mi)</b><span>Candidatos Dep. 2026</span></div>
+          <div><b>R$ 26.081/mês</b><span>Subsídio vereador</span></div>
+        </div>
+        <span class="hc-go">Abrir portal de São Paulo →</span>
+      </a>
+      <a class="hcard" href="sjc/">
+        <div class="hc-top">
+          <span class="pill">21 vereadores</span>
+          <span class="pill r">Prefeito Anderson Farias (PSD)</span>
+        </div>
+        <h3>Radar São José dos Campos</h3>
+        <p class="hc-sub"><b>25.857</b> proposições (8% homenagens · 949 projetos de lei) · <b>323</b> votações nominais</p>
+        <div class="hc-nums num">
+          <div><b>R$ 2,26 mi</b><span>Campanhas 2024 (TSE)</span></div>
+          <div><b>6 (R$ 2,85 mi)</b><span>Candidatos Dep. 2026</span></div>
+          <div><b>R$ 18.992/mês</b><span>Subsídio vereador</span></div>
+        </div>
+        <span class="hc-go">Abrir portal de São José dos Campos →</span>
+      </a>
+      <a class="hcard" href="taubate/">
+        <div class="hc-top">
+          <span class="pill">19 vereadores</span>
+          <span class="pill r">Prefeito Sérgio Victor (NOVO)</span>
+        </div>
+        <h3>Radar Taubaté</h3>
+        <p class="hc-sub"><b>7.689</b> proposições (13% homenagens · 219 projetos de lei) · <b>653</b> votações nominais</p>
+        <div class="hc-nums num">
+          <div><b>R$ 797,4 mil</b><span>Campanhas 2024 (TSE)</span></div>
+          <div><b>6 (R$ 1,85 mi)</b><span>Candidatos Dep. 2026</span></div>
+          <div><b>R$ 12.000/mês</b><span>Subsídio vereador</span></div>
+        </div>
+        <span class="hc-go">Abrir portal de Taubaté →</span>
+      </a>
+      <a class="hcard" href="caraguatatuba/">
+        <div class="hc-top">
+          <span class="pill">15 vereadores</span>
+          <span class="pill r">Prefeito Mateus Silva (PSD)</span>
+        </div>
+        <h3>Radar Caraguatatuba</h3>
+        <p class="hc-sub"><b>303</b> proposições (28% homenagens · 209 projetos de lei) · <b>0</b> votações nominais</p>
+        <div class="hc-nums num">
+          <div><b>R$ 520,3 mil</b><span>Campanhas 2024 (TSE)</span></div>
+          <div><b>1 (R$ 182,9 mil)</b><span>Candidatos Dep. 2026</span></div>
+          <div><b>R$ 10.840/mês</b><span>Subsídio vereador</span></div>
+        </div>
+        <span class="hc-go">Abrir portal de Caraguatatuba →</span>
+      </a>
+      <a class="hcard" href="jacarei/">
+        <div class="hc-top">
+          <span class="pill">13 vereadores</span>
+          <span class="pill r">Prefeito Celso Florêncio (PL)</span>
+        </div>
+        <h3>Radar Jacareí</h3>
+        <p class="hc-sub"><b>6.820</b> proposições (12% homenagens · 154 projetos de lei) · <b>4</b> votações nominais</p>
+        <div class="hc-nums num">
+          <div><b>R$ 404,7 mil</b><span>Campanhas 2024 (TSE)</span></div>
+          <div><b>3 (R$ 608,2 mil)</b><span>Candidatos Dep. 2026</span></div>
+          <div><b>R$ 10.044/mês</b><span>Subsídio vereador</span></div>
+        </div>
+        <span class="hc-go">Abrir portal de Jacareí →</span>
+      </a>
+      <a class="hcard" href="pindamonhangaba/">
+        <div class="hc-top">
+          <span class="pill">11 vereadores</span>
+          <span class="pill r">Prefeito Ricardo Piorino (PL)</span>
+        </div>
+        <h3>Radar Pindamonhangaba</h3>
+        <p class="hc-sub">Dados eleitorais completos TSE (2012–2026) + salários e gabinetes</p>
+        <div class="hc-nums num">
+          <div><b>R$ 352,3 mil</b><span>Campanhas 2024 (TSE)</span></div>
+          <div><b>2 (R$ 1,52 mi)</b><span>Candidatos Dep. 2026</span></div>
+          <div><b>R$ 9.606/mês</b><span>Subsídio vereador</span></div>
+        </div>
+        <span class="hc-go">Abrir portal de Pindamonhangaba →</span>
+      </a>
+      <a class="hcard" href="guaratingueta/">
+        <div class="hc-top">
+          <span class="pill">11 vereadores</span>
+          <span class="pill r">Prefeito Junior Filippo (PSD)</span>
+        </div>
+        <h3>Radar Guaratinguetá</h3>
+        <p class="hc-sub">Dados eleitorais completos TSE (2012–2026) + salários e gabinetes</p>
+        <div class="hc-nums num">
+          <div><b>R$ 238,4 mil</b><span>Campanhas 2024 (TSE)</span></div>
+          <div><b>1 (R$ 516,1 mil)</b><span>Candidatos Dep. 2026</span></div>
+          <div><b>R$ 15.595/mês</b><span>Subsídio vereador</span></div>
+        </div>
+        <span class="hc-go">Abrir portal de Guaratinguetá →</span>
+      </a>
+      <a class="hcard" href="cacapava/">
+        <div class="hc-top">
+          <span class="pill">10 vereadores</span>
+          <span class="pill r">Prefeito Yan Lopes (PODE)</span>
+        </div>
+        <h3>Radar Caçapava</h3>
+        <p class="hc-sub"><b>9.997</b> proposições (12% homenagens · 154 projetos de lei) · <b>0</b> votações nominais</p>
+        <div class="hc-nums num">
+          <div><b>R$ 103,7 mil</b><span>Campanhas 2024 (TSE)</span></div>
+          <div><b>1 (R$ 369,9 mil)</b><span>Candidatos Dep. 2026</span></div>
+          <div><b>R$ 7.090/mês</b><span>Subsídio vereador</span></div>
+        </div>
+        <span class="hc-go">Abrir portal de Caçapava →</span>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p><b>Radar Cidadão</b> é uma rede cívica independente e apartidária de dados públicos abertos, inspirada nos projetos Radar PTlândia e Radar Taubaté. Código-fonte aberto com atualização diária via GitHub Actions.</p>
+  </footer>
+</div>
+</body>
+</html>
