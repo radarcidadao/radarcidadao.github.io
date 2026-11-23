@@ -93,8 +93,10 @@ def collect_and_build_city(slug: str, force_live: bool = False) -> dict:
         rx = collect_jacarei(cfg, city_dir)
     elif motor == "caraguatatuba":
         rx = collect_caraguatatuba(cfg, city_dir)
-    else:
+    elif motor in ("sapl", "sapl_pinda", "spl_guara", "tse"):
         rx = collect_tse_city(cfg, city_dir)
+    else:
+        raise ValueError(f"Motor desconhecido para {slug}: {motor}")
 
     # Validação estrita do número constitucional de cadeiras antes de gravar dados.js
     n_ver = len(rx.get("v", []))
@@ -102,6 +104,14 @@ def collect_and_build_city(slug: str, force_live: bool = False) -> dict:
         raise RuntimeError(
             f"ABORTADO [{slug}]: Esperados {cfg['cadeiras']} vereadores, obtidos {n_ver}"
         )
+
+    # Sincronizar flag v['foto'] estritamente com a existência real do arquivo local fotos/{id}.jpg
+    for v in rx.get("v", []):
+        local_foto = os.path.join(fotos_dir, f"{v['id']}.jpg")
+        if os.path.exists(local_foto) and os.path.getsize(local_foto) > 500:
+            v["foto"] = 1
+        else:
+            v["foto"] = 0
 
     sz = save_rx_js(city_dir, rx)
 

@@ -814,7 +814,7 @@ footer p{margin:0 0 6px;max-width:70ch}
   <div class="sh-body" id="sh-b"></div>
 </div>
 
-<script src="dados.js?v=20261118v1"></script>
+<script src="dados.js?v=20261123v1"></script>
 <script>
 const D=window.RX, V=D.v, IT=D.items||[], CFG=D.cfg||{};
 const CIDADE=CFG.nome||'Caraguatatuba';
@@ -891,7 +891,7 @@ const hue=i=>(i*47+12)%360;
 const avStyle=i=>`background:hsl(${hue(i)} 80% 92%);color:hsl(${hue(i)} 55% 28%)`;
 const ini=s=>{const w=String(s||'X').replace(/^(Professor|Professora|Dr\.?|Dra\.?|Vereador|Vereadora|Coronel|Pastor|Pastora|Cabo|Capitão)\s+/i,'').split(/\s+/).filter(x=>x&&!/^(da|de|do|dos|das)$/i.test(x));return w.length?(w[0][0]+(w.length>1?w[w.length-1][0]:'')).toUpperCase():'VR'};
 V.forEach((v,i)=>{v.in=ini(v.ap)});
-const fotoSrc=v=>v.foto_url?v.foto_url:`fotos/${v.id}.jpg`;
+const fotoSrc=v=>`fotos/${v.id}.jpg`;
 const av=i=>V[i]&&V[i].foto?`<img class="av" src="${esc(fotoSrc(V[i]))}" alt="" loading="lazy" onerror="this.style.display='none'">`:`<span class="av" style="${avStyle(i)}" aria-hidden="true">${V[i]?V[i].in:'?'}</span>`;
 const mesAno=s=>s&&s.length>=6?`${MES[+s.slice(4,6)-1]} ${s.slice(0,4)}`:'';
 

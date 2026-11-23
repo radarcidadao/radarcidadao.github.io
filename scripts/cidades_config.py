@@ -164,7 +164,7 @@ CIDADES = {
         "cadeiras": 19,
         "logo_red": "TAU",
         "logo_black": "BATÉ",
-        "motor": "taubate_ref",
+        "motor": "spl",
         "spl_base": "https://camarasempapel.camarataubate.sp.gov.br/spl",
         "portal_url": "https://www.camarataubate.sp.gov.br/",
         "proc_url": "https://camarasempapel.camarataubate.sp.gov.br/spl/processo.aspx?id={id}",

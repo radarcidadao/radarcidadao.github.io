@@ -1131,6 +1131,10 @@ def build_spl_rx(cfg: dict, scratch_dir: str) -> dict:
         })
 
     bairros_out, bairrosn_out, rep_out = compute_bairros_and_rep(items, cfg["bairros"])
+    if len(items) < 100:
+        raise RuntimeError(
+            f"ABORTADO [{cfg['slug']}]: Coleta SPL incompleta ({len(items)} proposições); mantendo dados.js anterior."
+        )
     p_tse = tse_city.get("prefeito") or {}
     p_cfg = cfg["pref"]
 
